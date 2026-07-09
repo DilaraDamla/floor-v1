@@ -498,3 +498,89 @@ footer p{
     opacity:.9;
 
 }
+/* ===== GELİŞTİRME ===== */
+
+/* ===== HERO ===== */
+
+.hero{
+
+    position:relative;
+
+    height:600px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(255,255,255,.45),
+        rgba(255,255,255,.45)
+    ),
+    url("images/banner cicek.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+
+    background-size:cover;
+    background-position:center;
+}
+
+
+.hero h1{
+
+    font-family:"Playfair Display", serif;
+
+    font-size:64px;
+
+    color:#3b3030;
+
+    letter-spacing:1px;
+
+    text-shadow:0 3px 15px rgba(0,0,0,.12);
+
+}
+
+
+.btn,
+.card button{
+
+    box-shadow:0 10px 25px rgba(216,156,164,.35);
+
+    transition:.3s ease;
+
+}
+
+
+.btn:hover,
+.card button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(216,156,164,.45);
+
+}
+
+
+/* KARTLAR */
+
+.card{
+
+    transition:.3s ease;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 35px rgba(0,0,0,.12);
+
+}
