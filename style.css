@@ -838,3 +838,420 @@ footer p{
     transform:translateY(0);
 
 }
+/* ===== PREMIUM CART ===== */
+
+.cart-page h2{
+
+    font-size:45px;
+
+    color:#3b3030;
+
+}
+
+
+.cart-item{
+
+    background:white;
+
+    border:none;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+}
+
+
+.cart-item img{
+
+    width:150px;
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+}
+
+
+.cart-info h3{
+
+    font-family:"Playfair Display", serif;
+
+    font-size:25px;
+
+    color:#3b3030;
+
+}
+
+
+.cart-info p{
+
+    color:#d89ca4;
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+
+
+/* adet alanı */
+
+.quantity{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:15px 0;
+
+}
+
+
+.quantity button{
+
+    width:35px;
+
+    height:35px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#d89ca4;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+
+.quantity button:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+.quantity span{
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+
+
+/* toplam kutusu */
+
+.cart-total{
+
+    background:#f8f5f3;
+
+    padding:30px;
+
+    border-radius:20px;
+
+}
+
+
+.cart-total h3{
+
+    font-size:25px;
+
+    color:#3b3030;
+
+}
+/* ===== FLOOR LUXURY CART STYLE ===== */
+
+body{
+
+    background:#fcfaf8;
+
+}
+
+
+/* sepet başlığı */
+
+.cart-page h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:48px;
+
+    color:#2f2926;
+
+    letter-spacing:1px;
+
+    margin-bottom:60px;
+
+}
+
+
+
+/* ürün kartı */
+
+.cart-item{
+
+    background:#ffffff;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.06);
+
+    border:1px solid #f1ebe6;
+
+}
+
+
+
+/* ürün resmi */
+
+.cart-item img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+}
+
+
+
+/* ürün adı */
+
+.cart-info h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:28px;
+
+    color:#332b27;
+
+}
+
+
+
+/* fiyat */
+
+.cart-info p{
+
+    color:#7c6258;
+
+    font-size:22px;
+
+    margin:10px 0;
+
+}
+
+
+
+/* adet */
+
+.quantity button{
+
+    background:#332b27;
+
+    color:white;
+
+}
+
+
+.quantity span{
+
+    color:#332b27;
+
+}
+
+
+
+/* kaldır */
+
+.remove-btn{
+
+    background:transparent;
+
+    color:#a66b6b;
+
+    border:1px solid #e6caca;
+
+}
+
+
+
+/* toplam alanı */
+
+.cart-total{
+
+    margin-top:50px;
+
+    background:#ffffff;
+
+    border:1px solid #eee3dc;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.05);
+
+}
+
+
+
+.cart-total h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:30px;
+
+    color:#332b27;
+
+}
+
+
+
+/* alışveriş butonu */
+
+.cart-total .btn{
+
+    background:#332b27;
+
+    border-radius:30px;
+
+    padding:15px 45px;
+
+}
+
+
+.cart-total .btn:hover{
+
+    background:#5a4940;
+
+}
+/* ===== FLOOR PREMIUM PRODUCTS ===== */
+
+
+.products h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:48px;
+
+    color:#332b27;
+
+    letter-spacing:1px;
+
+}
+
+
+
+.card{
+
+    background:#fff;
+
+    border:1px solid #eee5df;
+
+    border-radius:25px;
+
+    padding-bottom:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
+
+    transition:.4s ease;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.12);
+
+}
+
+
+
+.card img{
+
+    height:360px;
+
+}
+
+
+
+.card h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:26px;
+
+    color:#332b27;
+
+}
+
+
+
+.card p{
+
+    color:#8b6f63;
+
+    font-size:21px;
+
+    font-weight:600;
+
+}
+
+
+
+/* Sepete ekle */
+
+.card button{
+
+    background:#332b27;
+
+    color:white;
+
+    border-radius:30px;
+
+    padding:14px 40px;
+
+    transition:.3s ease;
+
+}
+
+
+
+.card button:hover{
+
+    background:#d89ca4;
+
+    transform:translateY(-3px);
+
+}
