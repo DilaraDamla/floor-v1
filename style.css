@@ -490,14 +490,35 @@ header{
 
     padding:70px 8%;
 
+  .hero{
+
     background:
+
     linear-gradient(
-        90deg,
-        rgba(168,181,162,.18) 0%,
-        rgba(250,248,245,.45) 45%,
-        rgba(255,255,255,.10) 100%
+
+        rgba(255,255,255,.45),
+
+        rgba(255,255,255,.45)
+
     ),
+
+    linear-gradient(
+
+        90deg,
+
+        rgba(112,132,96,.35),
+
+        rgba(255,255,255,.05)
+
+    ),
+
     url("images/cicek.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
 
     background-size:cover;
 
@@ -517,7 +538,7 @@ header{
 
     grid-template-columns:1.1fr .9fr;
 
-    align-items:center;
+    aligbackn-items:center;
 
     gap:70px;
 
@@ -1668,7 +1689,7 @@ footer{
 
     }
 
-    .hero h1{
+     h1{
 
         font-size:52px;
 
@@ -1676,11 +1697,11 @@ footer{
 
     .hero p{
 
-        margin:auto;
+    color:#444;
 
-        margin-bottom:30px;
+    font-weight:500;
 
-    }
+}
 
     .hero-features{
 
@@ -1712,7 +1733,7 @@ footer{
 
     }
 
-    .logo{
+    .lo.herogo{
 
         font-size:28px;
 
@@ -1734,11 +1755,17 @@ footer{
 
     .hero h1{
 
-        font-size:40px;
+    color:#2f2828;
 
-    }
+    text-shadow:
 
-    .hero p{
+        0 4px 18px rgba(255,255,255,.65),
+
+        0 3px 8px rgba(0,0,0,.12);
+
+}
+
+     p{
 
         font-size:16px;
 
@@ -1762,7 +1789,7 @@ footer{
 
     }
 
-    .cart-item{
+    .cart-i.herotem{
 
         flex-direction:column;
 
@@ -1823,5 +1850,46 @@ footer{
         gap:25px;
 
     }
+
+}
+/* ==========================
+   NOTIFICATION
+========================== */
+
+.notification{
+
+    position:fixed;
+
+    top:30px;
+
+    right:30px;
+
+    background:#6b7d5f;
+
+    color:white;
+
+    padding:16px 24px;
+
+    border-radius:15px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+    z-index:99999;
+
+    opacity:0;
+
+    transform:translateX(100px);
+
+    transition:.35s ease;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+.notification.show{
+
+    opacity:1;
+
+    transform:translateX(0);
 
 }
