@@ -501,14 +501,16 @@ footer p{
 
 /* ===== HERO ===== */
 
-.hero{
+/* ===== HERO ===== */
 
-    position:relative;
+.hero{
 
     height:600px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     text-align:center;
@@ -792,5 +794,47 @@ footer p{
     margin:auto;
 
     display:block;
+
+}
+.dropdown{
+    position:relative;
+}
+
+
+.dropdown-menu{
+
+    position:absolute;
+    top:35px;
+    left:0;
+
+    background:white;
+
+    width:180px;
+
+    padding:15px 0;
+
+    border-radius:15px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+    list-style:none;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s ease;
+
+    z-index:100;
+}
+
+
+.dropdown:hover .dropdown-menu{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:translateY(0);
 
 }
