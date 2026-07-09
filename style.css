@@ -1,4 +1,7 @@
-/* ===== GENEL ===== */
+/* =====================================================
+   FLOOR v2.0
+   RESET & GENEL
+===================================================== */
 
 *{
     margin:0;
@@ -11,692 +14,300 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#fff;
-    color:#333;
+
+    font-family:"Poppins",sans-serif;
+
+    background:#faf8f5;
+
+    color:#3b3030;
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+
 }
-/* ===== NAVBAR ===== */
 
-.navbar{
+img{
 
-    width:90%;
-    max-width:1200px;
+    width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+button{
+
+    font-family:"Poppins",sans-serif;
+
+    cursor:pointer;
+
+    border:none;
+
+}
+
+section{
+
+    padding:90px 8%;
+
+}
+
+.container{
+
+    width:min(1200px,100%);
 
     margin:auto;
 
-    height:80px;
+}
+
+
+
+/* =====================================================
+   RENKLER
+===================================================== */
+
+:root{
+
+    --primary:#d89ca4;
+
+    --primary-dark:#c77b87;
+
+    --green:#73856d;
+
+    --green-light:#a8b5a2;
+
+    --cream:#faf8f5;
+
+    --white:#ffffff;
+
+    --text:#3b3030;
+
+    --gray:#7d7d7d;
+
+    --shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+
+
+/* =====================================================
+   BAŞLIKLAR
+===================================================== */
+
+h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:68px;
+
+    font-weight:700;
+
+    line-height:1.1;
+
+}
+
+h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+    margin-bottom:15px;
+
+}
+
+h3{
+
+    font-family:"Playfair Display",serif;
+
+}
+
+.section-subtitle{
+
+    max-width:600px;
+
+    margin:0 auto 55px;
+
+    text-align:center;
+
+    color:var(--gray);
+
+    font-size:17px;
+
+}
+
+
+
+/* =====================================================
+   BUTONLAR
+===================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 38px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(216,156,164,.35);
+
+}
+
+.btn:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 35px rgba(216,156,164,.45);
+
+}
+
+
+
+/* =====================================================
+   ORTAK KART
+===================================================== */
+
+.card{
+
+    background:white;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+}
+
+.navbar{
+
+    height:85px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
+    padding:0 8%;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(216,156,164,.15);
+
+    transition:.35s;
 
 }
 
 .logo{
 
-    font-family:"Playfair Display", serif;
-    font-size:32px;
-    font-weight:bold;
-    letter-spacing:3px;
+    font-family:"Playfair Display",serif;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:6px;
+
+    color:var(--text);
+
+    user-select:none;
 
 }
 
 .menu{
 
     display:flex;
-    gap:40px;
-
-    list-style:none;
-
-}
-
-.menu a{
-
-    text-decoration:none;
-
-    color:#333;
-
-    font-family:"Poppins", sans-serif;
-
-    font-weight:500;
-
-}
-
-.icons button{
-
-    border:none;
-
-    background:none;
-
-    cursor:pointer;
-
-    font-size:24px;
-
-}
-/* ===== HERO ===== */
-
-.hero{
-
-    height:600px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    background:#f8f5f3;
-
-}
-
-.hero-content{
-
-    width:90%;
-    max-width:700px;
-
-}
-
-.hero h1{
-
-    font-family:"Playfair Display", serif;
-
-    font-size:60px;
-
-    color:#333;
-
-    margin-bottom:20px;
-
-}
-
-.hero p{
-
-    font-family:"Poppins", sans-serif;
-
-    font-size:18px;
-
-    color:#666;
-
-    line-height:1.7;
-
-    margin-bottom:35px;
-
-}
-
-.btn{
-
-    display:inline-block;
-
-    padding:15px 40px;
-
-    background:#d89ca4;
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:30px;
-
-    font-family:"Poppins", sans-serif;
-
-    font-weight:500;
-
-}
-/* ===== PRODUCTS ===== */
-
-.products{
-
-    width:90%;
-    max-width:1200px;
-
-    margin:80px auto;
-
-}
-
-.products h2{
-
-    text-align:center;
-
-    font-family:"Playfair Display", serif;
-
-    font-size:40px;
-
-    margin-bottom:40px;
-
-}
-.product-list{
-
-    display:grid;
-
-   grid-template-columns:repeat(3,1fr);
-    gap:30px;
-
-}
-.card{
-
-    flex:1;
-
-    border:1px solid #eee;
-
-    border-radius:15px;
-
-    overflow:hidden;
-
-    text-align:center;
-
-    padding-bottom:20px;
-
-}
-
-.card img{
-
-    width:100%;
-
-    height:300px;
-
-    object-fit:cover;
-
-}
-
-.card h3{
-
-    margin:20px 0 10px;
-
-    font-family:"Poppins", sans-serif;
-
-}
-
-.card p{
-
-    margin-bottom:20px;
-
-    color:#777;
-
-    font-family:"Poppins", sans-serif;
-
-}
-
-.card button{
-
-    padding:12px 25px;
-
-    border:none;
-
-    background:#d89ca4;
-
-    color:white;
-
-    border-radius:25px;
-
-    cursor:pointer;
-
-}
-/* ===== ABOUT ===== */
-
-.about{
-
-    width:90%;
-    max-width:1000px;
-
-    margin:100px auto;
-
-    text-align:center;
-
-}
-
-.about h2{
-
-    font-family:"Playfair Display", serif;
-
-    font-size:40px;
-
-    margin-bottom:25px;
-
-}
-
-.about p{
-
-    font-family:"Poppins", sans-serif;
-
-    font-size:17px;
-
-    line-height:1.8;
-
-    color:#666;
-
-}
-/* ===== FOOTER ===== */
-
-footer{
-
-    background:#f8f5f3;
-
-    padding:35px;
-
-    text-align:center;
-
-    margin-top:80px;
-
-}
-
-footer p{
-
-    font-family:"Poppins", sans-serif;
-
-    color:#666;
-
-}
-
-/* ===== PRODUCT DETAIL ===== */
-
-.product-detail{
-
-    width:90%;
-    max-width:1100px;
-
-    margin:80px auto;
-
-    display:flex;
-
-    gap:60px;
 
     align-items:center;
 
-}
-
-.product-detail img{
-
-    width:450px;
-
-    border-radius:20px;
+    gap:45px;
 
 }
 
-.detail-text{
-
-    flex:1;
-
-}
-
-.detail-text h2{
-
-    font-family:"Playfair Display", serif;
-
-    font-size:42px;
-
-    margin-bottom:20px;
-
-}
-
-.price{
-
-    font-size:28px;
-
-    color:#d89ca4;
-
-    font-weight:bold;
-
-    margin-bottom:25px;
-
-}
-
-.detail-text p{
-
-    font-family:"Poppins", sans-serif;
-
-    line-height:1.8;
-
-    margin-bottom:25px;
-
-}
-/* ===== PRODUCT DETAIL ===== */
-
-.product-detail{
-
-    width:90%;
-    max-width:1100px;
-
-    margin:80px auto;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:60px;
-
-}
-
-.product-detail img{
-
-    width:450px;
-
-    border-radius:20px;
-
-}
-
-.detail-text{
-
-    flex:1;
-
-}
-
-.detail-text h2{
-
-    font-family:"Playfair Display", serif;
-
-    font-size:42px;
-
-    margin-bottom:20px;
-
-}
-
-.detail-text .price{
-
-    font-size:28px;
-
-    color:#d89ca4;
-
-    font-weight:bold;
-
-    margin-bottom:20px;
-
-}
-
-.detail-text p{
-
-    font-family:"Poppins", sans-serif;
-
-    line-height:1.8;
-
-    margin-bottom:25px;
-
-}
-/* ===== CART ===== */
-
-.cart-page{
-
-    width:90%;
-    max-width:1000px;
-
-    margin:80px auto;
-
-}
-
-.cart-page h2{
-
-    text-align:center;
-
-    margin-bottom:50px;
-
-    font-family:"Playfair Display", serif;
-
-}
-
-.cart-item{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:30px;
-
-    border:1px solid #eee;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    margin-bottom:40px;
-
-}
-
-.cart-item img{
-
-    width:180px;
-
-    border-radius:12px;
-
-}
-
-.cart-info h3{
-
-    margin-bottom:10px;
-
-}
-
-.cart-total{
-
-    text-align:right;
-
-}
-
-.cart-total h3{
-
-    margin-bottom:20px;
-
-}
-.remove-btn{
-
-    margin-top:15px;
-
-    padding:10px 18px;
-
-    border:none;
-
-    border-radius:20px;
-
-    background:#d89ca4;
-
-    color:white;
-
-    cursor:pointer;
-
-}
-
-.remove-btn:hover{
-
-    opacity:.9;
-
-}
-/* ===== GELİŞTİRME ===== */
-
-/* ===== HERO ===== */
-
-/* ===== HERO ===== */
-
-.hero{
-
-    height:600px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    background:
-    linear-gradient(
-        rgba(255,255,255,.45),
-        rgba(255,255,255,.45)
-    ),
-    url("images/cicek.png");
-
-    background-size:cover;
-
-    background-position:center;
-
-}
-
-.hero h1{
-
-    font-family:"Playfair Display", serif;
-
-    font-size:64px;
-
-    color:#3b3030;
-
-    letter-spacing:1px;
-
-    text-shadow:0 3px 15px rgba(0,0,0,.12);
-
-}
-
-
-.btn,
-.card button{
-
-    box-shadow:0 10px 25px rgba(216,156,164,.35);
-
-    transition:.3s ease;
-
-}
-
-
-.btn:hover,
-.card button:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 15px 30px rgba(216,156,164,.45);
-
-}
-
-
-/* KARTLAR */
-
-.card{
-
-    transition:.3s ease;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.05);
-
-}
-
-
-.card:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:0 20px 35px rgba(0,0,0,.12);
-
-}
-/* ===== PREMIUM PRODUCT CARDS ===== */
-
-.card{
-
-    background:white;
-
-    border:none;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
-
-    transition:.35s ease;
-
-}
-
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
-
-}
-
-
-.card img{
-
-    height:330px;
-
-    transition:.5s ease;
-
-}
-
-
-.card:hover img{
-
-    transform:scale(1.05);
-
-}
-
-
-.card h3{
-
-    font-family:"Playfair Display", serif;
-
-    font-size:24px;
-
-    color:#3b3030;
-
-    margin:22px 0 10px;
-
-}
-
-
-.card p{
-
-    color:#d89ca4;
-
-    font-size:20px;
-
-    font-weight:600;
-
-}
-
-
-.card button{
-
-    margin-top:5px;
-
-    padding:13px 35px;
-
-    background:#d89ca4;
-
-    font-size:15px;
-
-}
-
-
-.card button:hover{
-
-    background:#c9828d;
-
-}
-/* ===== PREMIUM NAVBAR ===== */
-
-.navbar{
-
-    height:90px;
-
-}
-
-
-.logo{
-
-    font-family:"Playfair Display", serif;
-
-    font-size:36px;
-
-    letter-spacing:5px;
-
-    color:#3b3030;
-
-}
-
-
-.menu a{
+.menu li{
 
     position:relative;
 
-    transition:.3s ease;
+}
+
+.menu a{
+
+    font-size:15px;
+
+    font-weight:500;
+
+    color:var(--text);
+
+    transition:.3s;
 
 }
 
+.menu a:hover{
+
+    color:var(--primary);
+
+}
 
 .menu a::after{
 
@@ -712,19 +323,11 @@ footer p{
 
     height:2px;
 
-    background:#d89ca4;
+    background:var(--primary);
 
-    transition:.3s ease;
-
-}
-
-
-.menu a:hover{
-
-    color:#d89ca4;
+    transition:.3s;
 
 }
-
 
 .menu a:hover::after{
 
@@ -733,103 +336,46 @@ footer p{
 }
 
 
-.icons button{
 
-    transition:.3s ease;
+/* =====================================================
+   DROPDOWN
+===================================================== */
 
-}
-
-
-.icons button:hover{
-
-    transform:scale(1.15);
-
-}
-/* ===== FLOWERS PAGE ===== */
-
-.products h2{
-
-    font-size:48px;
-
-    color:#3b3030;
-
-    margin-bottom:60px;
-
-}
-
-
-.product-list{
-
-    align-items:start;
-
-}
-
-
-.card a{
-
-    text-decoration:none;
-
-    color:inherit;
-
-}
-
-
-.card .price{
-
-    font-family:"Poppins", sans-serif;
-
-    font-size:22px;
-
-    color:#d89ca4;
-
-    font-weight:600;
-
-}
-
-
-.card button{
-
-    width:80%;
-
-    margin:auto;
-
-    display:block;
-
-}
 .dropdown{
-    position:relative;
-}
 
+    position:relative;
+
+}
 
 .dropdown-menu{
 
     position:absolute;
-    top:100px;
+
+    top:45px;
+
     left:0;
+
+    width:220px;
 
     background:white;
 
-    width:180px;
+    border-radius:18px;
 
-    padding:15px 0;
+    box-shadow:0 20px 45px rgba(0,0,0,.10);
 
-    border-radius:15px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-
-    list-style:none;
+    padding:12px 0;
 
     opacity:0;
+
     visibility:hidden;
 
-    transform:translateY(10px);
+    transform:translateY(12px);
 
-    transition:.3s ease;
+    transition:.3s;
 
-    z-index:100;
+    z-index:999;
+
 }
-
-
 
 .dropdown:hover .dropdown-menu{
 
@@ -841,88 +387,37 @@ footer p{
 
 }
 
+.dropdown-menu li{
 
-.dropdown-menu:hover{
-
-    opacity:1;
-
-    visibility:visible;
+    width:100%;
 
 }
 
+.dropdown-menu a{
 
-.dropdown{
+    display:block;
 
-    position:relative;
+    padding:14px 22px;
 
-}
-/* ===== PREMIUM CART ===== */
-
-.cart-page h2{
-
-    font-size:45px;
-
-    color:#3b3030;
+    font-size:14px;
 
 }
 
+.dropdown-menu a:hover{
 
-.cart-item{
+    background:#faf5f6;
 
-    background:white;
-
-    border:none;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-    border-radius:20px;
-
-    padding:25px;
-
-    margin-bottom:25px;
-
-}
-
-
-.cart-item img{
-
-    width:150px;
-
-    height:150px;
-
-    object-fit:cover;
-
-    border-radius:18px;
-
-}
-
-
-.cart-info h3{
-
-    font-family:"Playfair Display", serif;
-
-    font-size:25px;
-
-    color:#3b3030;
-
-}
-
-
-.cart-info p{
-
-    color:#d89ca4;
-
-    font-size:20px;
-
-    font-weight:600;
+    color:var(--primary);
 
 }
 
 
 
-/* adet alanı */
+/* =====================================================
+   ICONS
+===================================================== */
 
-.quantity{
+.icons{
 
     display:flex;
 
@@ -930,91 +425,978 @@ footer p{
 
     gap:15px;
 
-    margin:15px 0;
-
 }
 
+.icons button{
 
-.quantity button{
+    width:52px;
 
-    width:35px;
-
-    height:35px;
-
-    border:none;
+    height:52px;
 
     border-radius:50%;
 
-    background:#d89ca4;
+    background:white;
 
-    color:white;
+    box-shadow:0 8px 22px rgba(0,0,0,.08);
 
-    font-size:20px;
-
-    cursor:pointer;
-
-    transition:.3s ease;
-
-}
-
-
-.quantity button:hover{
-
-    transform:scale(1.1);
-
-}
-
-
-.quantity span{
+    transition:.35s;
 
     font-size:18px;
+
+}
+
+.icons button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(216,156,164,.30);
+
+}
+
+#cart-count{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    margin-left:2px;
+
+    color:var(--primary);
+
+}
+
+
+
+/* Hero sabit navbarın altında kalmasın */
+
+.hero{
+
+    margin-top:85px;
+
+}
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:calc(100vh - 85px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:70px 8%;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(168,181,162,.18) 0%,
+        rgba(250,248,245,.45) 45%,
+        rgba(255,255,255,.10) 100%
+    ),
+    url("images/cicek.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+}
+
+.hero-content{
+
+    width:100%;
+
+    max-width:1200px;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+.hero-text h1{
+
+    font-size:72px;
+
+    color:var(--text);
+
+    margin-bottom:25px;
+
+    line-height:1.08;
+
+}
+
+.hero-text p{
+
+    font-size:18px;
+
+    color:#5f5f5f;
+
+    max-width:520px;
+
+    margin-bottom:35px;
+
+}
+
+.hero-features{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:40px;
+
+}
+
+.hero-features span{
+
+    background:white;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:520px;
+
+    border-radius:35px;
+
+    box-shadow:0 30px 60px rgba(0,0,0,.12);
+
+    transition:.45s;
+
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.hero .btn{
+
+    font-size:16px;
+
+    padding:17px 42px;
+
+}
+.hero-tag{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(115,133,109,.12);
+
+    color:var(--green);
+
+    font-size:14px;
 
     font-weight:600;
 
 }
+/* =====================================================
+   PRODUCTS
+===================================================== */
 
+.products{
 
+    background:#fff;
 
-/* toplam kutusu */
+    text-align:center;
 
-.cart-total{
+}
 
-    background:#f8f5f3;
+.products h2{
 
-    padding:30px;
+    margin-bottom:15px;
 
-    border-radius:20px;
+}
+
+.product-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+    margin-top:60px;
 
 }
 
 
-.cart-total h3{
 
-    font-size:25px;
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
 
-    color:#3b3030;
+.card{
+
+    background:#fff;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    position:relative;
 
 }
-/* ===== FLOOR LUXURY CART STYLE ===== */
 
-body{
+.card:hover{
 
-    background:#fcfaf8;
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.12);
+
+}
+
+.card img{
+
+    height:320px;
+
+    object-fit:cover;
+
+    transition:.45s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.06);
+
+}
+
+.card h3{
+
+    font-size:28px;
+
+    margin:25px 0 10px;
+
+    color:var(--text);
+
+}
+
+.card p{
+
+    font-size:22px;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.card button{
+
+    width:80%;
+
+    margin:0 auto 30px;
+
+    display:block;
 
 }
 
 
-/* sepet başlığı */
 
-.cart-page h2{
+/* =====================================================
+   BADGE
+===================================================== */
+
+.card::before{
+
+    content:"Popüler";
+
+    position:absolute;
+
+    top:20px;
+
+    left:20px;
+
+    background:var(--green);
+
+    color:#fff;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    z-index:5;
+
+}
+
+
+
+/* =====================================================
+   TÜM ÜRÜNLER BUTONU
+===================================================== */
+
+.all-products{
+
+    display:inline-block;
+
+    margin-top:60px;
+
+    padding:16px 42px;
+
+    border:2px solid var(--primary);
+
+    border-radius:999px;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.all-products:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+.price{
+
+    letter-spacing:1px;
+
+}
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+
+    background:linear-gradient(
+        180deg,
+        #faf8f5 0%,
+        #ffffff 100%
+    );
+
+}
+
+.about-content{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.about-text h2{
+
+    margin-bottom:25px;
+
+}
+
+.about-text p{
+
+    color:#666;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* =====================================================
+   ABOUT BUTTON
+===================================================== */
+
+.about-btn{
+
+    display:inline-block;
+
+    padding:16px 38px;
+
+    border-radius:999px;
+
+    background:var(--green);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.about-btn:hover{
+
+    transform:translateY(-4px);
+
+    background:#62745d;
+
+}
+
+
+
+/* =====================================================
+   ABOUT BOX
+===================================================== */
+
+.about-box{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+.about-box div{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+}
+
+.about-box div:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.about-box strong{
+
+    display:block;
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.about-box p{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+
+
+/* =====================================================
+   ABOUT STATS
+===================================================== */
+
+.about-box div:nth-child(1){
+
+    border-top:5px solid var(--primary);
+
+}
+
+.about-box div:nth-child(2){
+
+    border-top:5px solid var(--green);
+
+}
+
+.about-box div:nth-child(3){
+
+    border-top:5px solid #e6b17e;
+
+}
+
+.about-box div:nth-child(4){
+
+    border-top:5px solid #b38ad6;
+
+}
+/* =====================================================
+   REVIEWS
+===================================================== */
+
+.reviews{
+
+    background:#faf8f5;
+
+    text-align:center;
+
+}
+
+.review-list{
+
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.review-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.review-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.12);
+
+}
+
+.review-card::before{
+
+    content:"❝";
+
+    position:absolute;
+
+    top:15px;
+
+    right:25px;
+
+    font-size:70px;
+
+    color:rgba(216,156,164,.12);
+
+    font-family:serif;
+
+}
+
+.stars{
+
+    color:#f5b301;
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+    letter-spacing:3px;
+
+}
+
+.review-card p{
+
+    color:#666;
+
+    line-height:1.9;
+
+    margin-bottom:25px;
+
+    font-size:16px;
+
+}
+
+.review-card h4{
 
     font-family:"Playfair Display",serif;
 
-    font-size:48px;
+    color:var(--text);
 
-    color:#2f2926;
+    font-size:20px;
 
-    letter-spacing:1px;
+}
+.review-avatar{
+
+    width:70px;
+
+    height:70px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #efc7cc
+    );
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:0 10px 25px rgba(216,156,164,.30);
+
+}
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.social{
+
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #faf8f5 100%
+    );
+
+    text-align:center;
+
+}
+
+.social h2{
+
+    margin-bottom:15px;
+
+}
+
+.social p{
+
+    max-width:600px;
+
+    margin:0 auto 50px;
+
+    color:#666;
+
+}
+
+
+
+/* =====================================================
+   INSTAGRAM GRID
+===================================================== */
+
+.social-gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-bottom:60px;
+
+}
+
+.social-gallery img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.social-gallery img:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* =====================================================
+   SOSYAL BUTONLAR
+===================================================== */
+
+.social-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.social-links a{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    font-size:24px;
+
+}
+
+.social-links a:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--primary);
+
+    color:white;
+
+}
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:#5f7057;
+
+    color:white;
+
+    padding:80px 8% 25px;
+
+}
+
+.footer-content{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    gap:50px;
+
+}
+
+.footer-brand h3{
+
+    font-size:38px;
+
+    letter-spacing:5px;
+
+    margin-bottom:20px;
+
+    color:white;
+
+}
+
+.footer-brand p{
+
+    color:rgba(255,255,255,.75);
+
+    line-height:1.9;
+
+    max-width:320px;
+
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4{
+
+    margin-bottom:25px;
+
+    font-size:20px;
+
+    color:white;
+
+}
+
+.footer-links a,
+.footer-social a{
+
+    display:block;
+
+    margin-bottom:14px;
+
+    color:rgba(255,255,255,.75);
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover,
+.footer-social a:hover{
+
+    color:#fff;
+
+    transform:translateX(6px);
+
+}
+
+.footer-contact p{
+
+    margin-bottom:14px;
+
+    color:rgba(255,255,255,.75);
+
+}
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    margin-top:60px;
+
+    padding-top:25px;
+
+    text-align:center;
+
+    color:rgba(255,255,255,.7);
+
+    font-size:14px;
+
+}
+.footer-slogan{
+
+    margin-top:-10px;
+
+    margin-bottom:20px;
+
+    font-style:italic;
+
+    color:rgba(255,255,255,.6);
+
+}
+.footer-social a{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    margin-bottom:12px;
+
+}
+
+.footer-social a:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-4px);
+
+}
+/* =====================================================
+   CART
+===================================================== */
+
+.cart-page{
+
+    max-width:1200px;
+
+    margin:140px auto 80px;
+
+    padding:0 8%;
+
+}
+
+.cart-page h2{
+
+    text-align:center;
 
     margin-bottom:60px;
 
@@ -1022,31 +1404,29 @@ body{
 
 
 
-/* ürün kartı */
+/* =====================================================
+   CART ITEM
+===================================================== */
 
 .cart-item{
-
-    background:#ffffff;
-
-    border-radius:25px;
-
-    padding:30px;
 
     display:flex;
 
     align-items:center;
 
-    gap:40px;
+    gap:30px;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.06);
+    background:white;
 
-    border:1px solid #f1ebe6;
+    border-radius:25px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 }
-
-
-
-/* ürün resmi */
 
 .cart-item img{
 
@@ -1060,187 +1440,25 @@ body{
 
 }
 
+.cart-info{
 
+    flex:1;
 
-/* ürün adı */
+}
 
 .cart-info h3{
 
-    font-family:"Playfair Display",serif;
-
     font-size:28px;
 
-    color:#332b27;
+    margin-bottom:10px;
 
 }
-
-
-
-/* fiyat */
 
 .cart-info p{
 
-    color:#7c6258;
+    color:var(--primary);
 
     font-size:22px;
-
-    margin:10px 0;
-
-}
-
-
-
-/* adet */
-
-.quantity button{
-
-    background:#332b27;
-
-    color:white;
-
-}
-
-
-.quantity span{
-
-    color:#332b27;
-
-}
-
-
-
-/* kaldır */
-
-.remove-btn{
-
-    background:transparent;
-
-    color:#a66b6b;
-
-    border:1px solid #e6caca;
-
-}
-
-
-
-/* toplam alanı */
-
-.cart-total{
-
-    margin-top:50px;
-
-    background:#ffffff;
-
-    border:1px solid #eee3dc;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.05);
-
-}
-
-
-
-.cart-total h3{
-
-    font-family:"Playfair Display",serif;
-
-    font-size:30px;
-
-    color:#332b27;
-
-}
-
-
-
-/* alışveriş butonu */
-
-.cart-total .btn{
-
-    background:#332b27;
-
-    border-radius:30px;
-
-    padding:15px 45px;
-
-}
-
-
-.cart-total .btn:hover{
-
-    background:#5a4940;
-
-}
-/* ===== FLOOR PREMIUM PRODUCTS ===== */
-
-
-.products h2{
-
-    font-family:"Playfair Display",serif;
-
-    font-size:48px;
-
-    color:#332b27;
-
-    letter-spacing:1px;
-
-}
-
-
-
-.card{
-
-    background:#fff;
-
-    border:1px solid #eee5df;
-
-    border-radius:25px;
-
-    padding-bottom:25px;
-
-    overflow:hidden;
-
-    box-shadow:0 12px 35px rgba(0,0,0,.06);
-
-    transition:.4s ease;
-
-}
-
-
-
-.card:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:0 25px 50px rgba(0,0,0,.12);
-
-}
-
-
-
-.card img{
-
-    height:360px;
-
-}
-
-
-
-.card h3{
-
-    font-family:"Playfair Display",serif;
-
-    font-size:26px;
-
-    color:#332b27;
-
-}
-
-
-
-.card p{
-
-    color:#8b6f63;
-
-    font-size:21px;
 
     font-weight:600;
 
@@ -1248,695 +1466,97 @@ body{
 
 
 
-/* Sepete ekle */
-
-.card button{
-
-    background:#332b27;
-
-    color:white;
-
-    border-radius:30px;
-
-    padding:14px 40px;
-
-    transition:.3s ease;
-
-}
-
-
-
-.card button:hover{
-
-    background:#d89ca4;
-
-    transform:translateY(-3px);
-
-}
-/* ===== FLOOR PREMIUM HERO ===== */
-
-.hero{
-
-    min-height:650px;
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-        90deg,
-        rgba(252,250,248,.85),
-        rgba(252,250,248,.35)
-    );
-
-}
-
-
-.hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-    max-width:800px;
-
-}
-
-
-
-.hero h1{
-
-    font-family:"Playfair Display",serif;
-
-    font-size:70px;
-
-    color:#332b27;
-
-    line-height:1.2;
-
-}
-
-
-
-.hero p{
-
-    font-size:20px;
-
-    color:#6f625c;
-
-    max-width:600px;
-
-    margin:25px auto 40px;
-
-}
-
-
-
-/* Ana buton */
-
-.hero .btn{
-
-    background:#332b27;
-
-    padding:17px 50px;
-
-    border-radius:40px;
-
-    font-size:16px;
-
-    box-shadow:0 15px 30px rgba(0,0,0,.15);
-
-    transition:.3s ease;
-
-}
-
-
-
-.hero .btn:hover{
-
-    background:#d89ca4;
-
-    transform:translateY(-5px);
-
-}
-.hero-features{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:25px;
-
-    margin-bottom:35px;
-
-    color:#6f625c;
-
-    font-family:"Poppins",sans-serif;
-
-    font-size:14px;
-
-}
-/* ===== FLOOR ELEGANT HERO ===== */
-
-.hero{
-
-    min-height:520px;
-
-    background:#fcfaf8;
-
-}
-
-
-.hero-content{
-
-    max-width:650px;
-
-}
-
-
-
-.hero h1{
-
-    font-size:52px;
-
-    line-height:1.25;
-
-    letter-spacing:-1px;
-
-    margin-bottom:15px;
-
-}
-
-
-
-.hero p{
-
-    font-size:17px;
-
-    line-height:1.8;
-
-    margin-bottom:25px;
-
-}
-
-
-
-.hero-features{
-
-    gap:18px;
-
-    margin-bottom:25px;
-
-}
-
-
-.hero-features span{
-
-    font-size:13px;
-
-}
-
-
-
-.hero .btn{
-
-    padding:14px 38px;
-
-    font-size:15px;
-
-}
-/* ===== HERO SPLIT DESIGN ===== */
-
-
-.hero{
-
-    min-height:560px;
+/* =====================================================
+   QUANTITY
+===================================================== */
+
+.quantity{
 
     display:flex;
 
     align-items:center;
 
-    background:#fcfaf8;
-
-}
-
-
-
-.hero-content{
-
-    width:90%;
-
-    max-width:1200px;
-
-    margin:auto;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:50px;
-
-}
-
-
-
-.hero-text{
-
-    flex:1;
-
-    text-align:left;
-
-}
-
-
-
-.hero h1{
-
-    font-size:58px;
-
-    color:#332b27;
-
-}
-
-
-
-.hero p{
+    gap:15px;
 
     margin:25px 0;
 
-    max-width:500px;
-
 }
 
+.quantity button{
 
+    width:42px;
 
-.hero-image{
-
-    flex:1;
-
-    display:flex;
-
-    justify-content:center;
-
-}
-
-
-
-.hero-image img{
-
-    width:450px;
-
-    height:450px;
-
-    object-fit:cover;
+    height:42px;
 
     border-radius:50%;
 
-    box-shadow:0 25px 60px rgba(0,0,0,.12);
-
-}
-/* ===== PREMIUM NAVBAR ===== */
-
-
-.navbar{
-
-    height:90px;
-
-}
-
-
-
-.logo{
-
-    font-size:36px;
-
-    color:#332b27;
-
-    letter-spacing:5px;
-
-}
-
-
-
-.menu{
-
-    gap:35px;
-
-}
-
-
-
-.menu a{
-
-    position:relative;
-
-    color:#4a403b;
-
-    font-size:15px;
-
-}
-
-
-
-.menu a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-8px;
-
-    width:0;
-
-    height:1px;
-
-    background:#332b27;
-
-    transition:.3s ease;
-
-}
-
-
-
-.menu a:hover::after{
-
-    width:100%;
-
-}
-
-
-
-/* sepet */
-
-.icons button{
-
-    font-size:22px;
-
-    color:#332b27;
-
-}
-
-
-
-#cart-count{
-
-    font-size:13px;
-
-}
-/* ===== DROPDOWN ===== */
-
-
-.dropdown{
-
-    position:relative;
-
-}
-
-
-.dropdown-menu{
-
-    position:absolute;
-
-    top:100%;
-
-    left:0;
-
-    background:white;
-
-    width:180px;
-
-    padding:15px 0;
-
-    border-radius:15px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.1);
-
-    display:none;
-
-    z-index:100;
-
-}
-
-
-
-.dropdown-menu li{
-
-    list-style:none;
-
-    padding:10px 20px;
-
-}
-
-
-
-.dropdown-menu li a{
-
-    font-size:14px;
-
-}
-
-
-
-.dropdown:hover .dropdown-menu{
-
-    display:block;
-
-}
-/* ===== PRODUCT SECTION PREMIUM ===== */
-
-
-.products{
-
-    padding-top:40px;
-
-}
-
-
-
-.section-subtitle{
-
-    text-align:center;
-
-    color:#7c6d65;
-
-    font-family:"Poppins",sans-serif;
-
-    margin-top:-25px;
-
-    margin-bottom:45px;
-
-    font-size:16px;
-
-}
-
-
-
-.card{
-
-    position:relative;
-
-}
-
-
-
-.card h3{
-
-    margin-top:25px;
-
-}
-
-
-
-.all-products{
-
-    display:block;
-
-    width:max-content;
-
-    margin:50px auto 0;
-
-    padding:14px 40px;
-
-    border:1px solid #332b27;
-
-    border-radius:30px;
-
-    text-decoration:none;
-
-    color:#332b27;
-
-    font-family:"Poppins",sans-serif;
-
-    transition:.3s ease;
-
-}
-
-
-
-.all-products:hover{
-
-    background:#332b27;
+    background:var(--green);
 
     color:white;
 
-}
-/* ===== ABOUT PREMIUM ===== */
+    font-size:20px;
 
-
-.about{
-
-    background:#fcfaf8;
-
-    padding:90px 0;
-
-    margin-top:100px;
+    transition:.3s;
 
 }
 
+.quantity button:hover{
 
+    background:#61745b;
 
-.about-content{
-
-    width:90%;
-
-    max-width:1100px;
-
-    margin:auto;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:60px;
+    transform:scale(1.08);
 
 }
 
+.quantity span{
 
+    font-size:20px;
 
-.about-text{
+    font-weight:600;
 
-    flex:1;
-
-}
-
-
-
-.about-text h2{
-
-    font-size:45px;
-
-    color:#332b27;
-
-}
-
-
-
-.about-text p{
-
-    margin:25px 0;
-
-    color:#6f625c;
-
-}
-
-
-
-.about-btn{
-
-    display:inline-block;
-
-    padding:14px 35px;
-
-    border-radius:30px;
-
-    background:#332b27;
-
-    color:white;
-
-    text-decoration:none;
-
-}
-
-
-
-.about-box{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-
-
-.about-box div{
-
-    background:white;
-
-    padding:20px 40px;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
-
-    display:flex;
-
-    align-items:center;
-
-    gap:20px;
-
-}
-
-
-
-.about-box strong{
-
-    font-size:25px;
-
-}
-/* ===== REVIEWS ===== */
-
-
-.reviews{
-
-    width:90%;
-
-    max-width:1200px;
-
-    margin:100px auto;
+    min-width:30px;
 
     text-align:center;
 
 }
 
 
-.reviews h2,
-.social h2{
 
-    font-family:"Playfair Display",serif;
+/* =====================================================
+   REMOVE BUTTON
+===================================================== */
 
-    font-size:42px;
+.remove-btn{
 
-    color:#332b27;
+    padding:12px 22px;
+
+    background:#e66f7d;
+
+    color:white;
+
+    border-radius:999px;
+
+    transition:.3s;
+
+}
+
+.remove-btn:hover{
+
+    background:#cf5565;
+
+    transform:translateY(-2px);
 
 }
 
 
 
-.review-list{
+/* =====================================================
+   TOTAL
+===================================================== */
 
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
+.cart-total{
 
     margin-top:50px;
-
-}
-
-
-
-.review-card{
 
     background:white;
 
@@ -1944,51 +1564,30 @@ body{
 
     border-radius:25px;
 
-    box-shadow:0 10px 35px rgba(0,0,0,.06);
+    text-align:right;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 }
 
+.cart-total h3{
 
+    font-size:34px;
 
-.stars{
-
-    color:#c59b5f;
-
-    font-size:20px;
-
-    margin-bottom:20px;
+    margin-bottom:25px;
 
 }
 
+.cart-total .btn{
 
-
-.review-card p{
-
-    color:#6f625c;
-
-    line-height:1.8;
+    padding:18px 45px;
 
 }
+/* =====================================================
+   EMPTY CART
+===================================================== */
 
-
-
-.review-card h4{
-
-    margin-top:20px;
-
-    color:#332b27;
-
-}
-
-
-
-
-/* ===== SOCIAL ===== */
-
-
-.social{
-
-    background:#fcfaf8;
+.empty-cart{
 
     text-align:center;
 
@@ -1996,559 +1595,233 @@ body{
 
 }
 
+.empty-icon{
 
-
-.social p{
-
-    color:#6f625c;
-
-    margin:20px;
-
-}
-
-
-
-.social-links{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-}
-
-
-
-.social-links a{
-
-    text-decoration:none;
-
-    color:#332b27;
-
-    border:1px solid #332b27;
-
-    padding:12px 30px;
-
-    border-radius:30px;
-
-    transition:.3s;
-
-}
-
-
-
-.social-links a:hover{
-
-    background:#332b27;
-
-    color:white;
-
-}
-/* ===== PREMIUM FOOTER ===== */
-
-
-footer{
-
-    background:#332b27;
-
-    color:white;
-
-    padding:70px 0 20px;
-
-    margin-top:100px;
-
-}
-
-
-
-.footer-content{
-
-    width:90%;
-
-    max-width:1200px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:2fr 1fr 1fr 1fr;
-
-    gap:40px;
-
-}
-
-
-
-.footer-brand h3{
-
-    font-family:"Playfair Display",serif;
-
-    font-size:40px;
-
-    letter-spacing:4px;
-
-}
-
-
-
-.footer-content h4{
+    font-size:70px;
 
     margin-bottom:20px;
 
-    font-family:"Poppins",sans-serif;
+}
+
+.empty-cart h3{
+
+    font-size:34px;
+
+    margin-bottom:15px;
 
 }
 
+.empty-cart p{
 
+    color:#777;
 
-.footer-content p{
-
-    color:#ddd;
-
-    line-height:1.8;
+    margin-bottom:35px;
 
 }
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
+@media (max-width:992px){
 
+    section{
 
-.footer-content a{
-
-    display:block;
-
-    color:#ddd;
-
-    text-decoration:none;
-
-    margin-bottom:12px;
-
-}
-
-
-
-.footer-content a:hover{
-
-    color:#d89ca4;
-
-}
-
-
-
-.footer-bottom{
-
-    border-top:1px solid rgba(255,255,255,.15);
-
-    margin-top:50px;
-
-    padding-top:20px;
-
-    text-align:center;
-
-}
-
-
-
-.footer-bottom p{
-
-    color:#ccc;
-
-}
-/* ===== MOBILE RESPONSIVE ===== */
-
-
-@media (max-width:900px){
-
-
-/* navbar */
-
-.navbar{
-
-    width:90%;
-
-    height:auto;
-
-    padding:20px 0;
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-
-
-.menu{
-
-    flex-direction:column;
-
-    gap:15px;
-
-    text-align:center;
-
-}
-
-
-
-/* hero */
-
-.hero{
-
-    min-height:auto;
-
-    padding:60px 0;
-
-}
-
-
-
-.hero-content{
-
-    flex-direction:column;
-
-    text-align:center;
-
-}
-
-
-
-.hero-text{
-
-    text-align:center;
-
-}
-
-
-
-.hero h1{
-
-    font-size:42px;
-
-}
-
-
-
-.hero-image img{
-
-    width:320px;
-
-    height:320px;
-
-}
-
-
-
-.hero-features{
-
-    flex-direction:column;
-
-}
-
-
-
-/* ürünler */
-
-.product-list{
-
-    grid-template-columns:1fr;
-
-}
-
-
-
-.card img{
-
-    height:350px;
-
-}
-
-
-
-/* about */
-
-.about-content{
-
-    flex-direction:column;
-
-    text-align:center;
-
-}
-
-
-
-.about-box{
-
-    width:100%;
-
-}
-
-
-
-/* yorumlar */
-
-.review-list{
-
-    grid-template-columns:1fr;
-
-}
-
-
-
-/* footer */
-
-.footer-content{
-
-    grid-template-columns:1fr;
-
-    text-align:center;
-
-}
-
-
-.social-links{
-
-    flex-direction:column;
-
-    align-items:center;
-
-}
-
-
-
-}
-/* Mobil yorum alanı boşluk düzeni */
-
-@media (max-width:900px){
-
-    .reviews h2{
-
-        margin-bottom:20px;
-
-        line-height:1.3;
+        padding:80px 7%;
 
     }
 
+    .hero{
 
-    .reviews .section-subtitle{
+        min-height:auto;
 
-        margin-top:0;
+        padding:140px 7% 80px;
 
-        margin-bottom:35px;
+        text-align:center;
 
-        padding:0 15px;
+    }
 
-        line-height:1.6;
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .hero-text{
+
+        order:2;
+
+    }
+
+    .hero-image{
+
+        order:1;
+
+    }
+
+    .hero-image img{
+
+        max-width:380px;
+
+        width:100%;
+
+    }
+
+    .hero h1{
+
+        font-size:52px;
+
+    }
+
+    .hero p{
+
+        margin:auto;
+
+        margin-bottom:30px;
+
+    }
+
+    .hero-features{
+
+        justify-content:center;
+
+    }
+
+    .about-content{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-content{
+
+        grid-template-columns:repeat(2,1fr);
 
     }
 
 }
-/* ===== PRODUCT DETAIL PREMIUM ===== */
-
-
-.product-image{
-
-    flex:1;
-
-}
-
-
-
-.product-image img{
-
-    width:100%;
-
-    max-width:500px;
-
-    border-radius:30px;
-
-}
-
-
-
-.product-features{
-
-    list-style:none;
-
-    margin:25px 0;
-
-}
-
-
-
-.product-features li{
-
-    margin-bottom:12px;
-
-    font-family:"Poppins",sans-serif;
-
-    color:#665a54;
-
-}
-
-
-
-@media(max-width:900px){
-
-
-.product-detail{
-
-    flex-direction:column;
-
-    text-align:center;
-
-}
-
-
-
-.product-image img{
-
-    width:320px;
-
-}
-
-
-
-.detail-text h2{
-
-    font-size:36px;
-
-}
-
-
-}
-/* ===== Bildirim ===== */
-
-.notification{
-
-    position:fixed;
-
-    top:30px;
-
-    right:30px;
-
-    background:#ffffff;
-
-    color:#333;
-
-    padding:16px 24px;
-
-    border-radius:16px;
-
-    border-left:5px solid #d89ca4;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-
-    font-family:"Poppins",sans-serif;
-
-    font-weight:500;
-
-    z-index:9999;
-
-    animation:slideIn .35s ease;
-
-}
-
-@keyframes slideIn{
-
-    from{
-
-        opacity:0;
-        transform:translateX(60px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateX(0);
-
-    }
-
-}
-/* ==========================
-   MOBİL HERO
-========================== */
 
 @media (max-width:768px){
 
-.hero{
+    .navbar{
 
-    position:relative;
-    overflow:hidden;
-    min-height:75vh;
-    padding:120px 25px 70px;
+        height:75px;
 
-}
+        padding:0 20px;
 
-.hero-content{
+    }
 
-    display:block;
-    position:relative;
-    z-index:2;
-    text-align:center;
+    .logo{
 
-}
+        font-size:28px;
 
-.hero-image{
+    }
 
-    position:absolute;
-    inset:0;
-    z-index:1;
+    .menu{
 
-}
+        gap:18px;
 
-.hero-image img{
+        font-size:14px;
 
-    width:100%;
-    height:100%;
-    object-fit:cover;
+    }
 
-    opacity:.18;
+    .hero{
 
-    filter:brightness(.9);
+        padding-top:120px;
 
-}
+    }
 
-.hero::before{
+    .hero h1{
 
-    content:"";
+        font-size:40px;
 
-    position:absolute;
-    inset:0;
+    }
 
-    background:linear-gradient(
-        rgba(255,255,255,.75),
-        rgba(255,255,255,.92)
-    );
+    .hero p{
 
-    z-index:1;
+        font-size:16px;
 
-}
+    }
 
-.hero-text{
+    .product-list{
 
-    position:relative;
-    z-index:2;
+        grid-template-columns:1fr;
 
-}
+    }
 
-.hero h1{
+    .review-list{
 
-    font-size:42px;
+        grid-template-columns:1fr;
 
-}
+    }
 
-.hero p{
+    .social-gallery{
 
-    font-size:16px;
+        grid-template-columns:repeat(2,1fr);
 
-}
+    }
 
-.hero-features{
+    .cart-item{
 
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .quantity{
+
+        justify-content:center;
+
+    }
 
 }
+
+@media (max-width:576px){
+
+    .footer-content{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .footer-brand p{
+
+        margin:auto;
+
+    }
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero-image img{
+
+        max-width:300px;
+
+    }
+
+    .about-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .social-gallery{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .review-stats{
+
+        gap:25px;
+
+    }
 
 }

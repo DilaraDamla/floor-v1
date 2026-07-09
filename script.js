@@ -1,282 +1,245 @@
-// =============================
+// ==============================
 // FLOOR - SEPET SİSTEMİ
-// =============================
+// ==============================
 
 const buttons = document.querySelectorAll(".add-cart");
 const cartCount = document.getElementById("cart-count");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-
-// eski ürünlere quantity ekle
+// Eski ürünlere quantity ekle
 cart.forEach(product => {
-
-    if(!product.quantity){
-
+    if (!product.quantity) {
         product.quantity = 1;
-
     }
-
 });
 
-
+// Sepet sayısını güncelle
 updateCartCount();
 
-
-// Ürün ekleme
+// ==============================
+// ÜRÜN EKLE
+// ==============================
 
 buttons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-
         const product = {
 
             id: button.dataset.id,
-
             name: button.dataset.name,
-
             price: Number(button.dataset.price),
-
             image: button.dataset.image,
-
-            quantity:1
+            quantity: 1
 
         };
 
-
         const existing = cart.find(item => item.id === product.id);
 
-
-        if(existing){
+        if (existing) {
 
             existing.quantity++;
 
-        }else{
+        } else {
 
             cart.push(product);
 
         }
 
-
         localStorage.setItem("cart", JSON.stringify(cart));
-
 
         updateCartCount();
 
-
-        showNotification(product.name + " sepete eklendi 🌸");
-
+        showNotification("🌸 " + product.name + " sepete eklendi");
 
     });
 
 });
 
+// ==============================
+// SEPET SAYISI
+// ==============================
 
+function updateCartCount() {
 
+    if (!cartCount) return;
 
-// Sepet sayısı
+    let totalQuantity = 0;
 
-function updateCartCount(){
+    cart.forEach(product => {
 
-    if(cartCount){
-
-        let totalQuantity = 0;
-
-
-        cart.forEach(product => {
-
-            totalQuantity += product.quantity;
-
-        });
-
-
-        cartCount.textContent = totalQuantity;
-
-    }
-
-}
-
-
-
-
-
-// Sepet sayfası
-
-const cartItems = document.getElementById("cart-items");
-
-const totalPrice = document.getElementById("total-price");
-
-
-
-if(cartItems){
-
-
-    let total = 0;
-
-
-    cartItems.innerHTML = "";
-
-
-
-    cart.forEach((product,index)=>{
-
-
-        total += product.price * product.quantity;
-
-
-
-        cartItems.innerHTML += `
-
-
-        <div class="cart-item">
-
-
-            <img src="../${product.image}" alt="${product.name}">
-
-
-            <div class="cart-info">
-
-
-                <h3>${product.name}</h3>
-
-
-                <p>${product.price} ₺</p>
-
-
-                <div class="quantity">
-
-
-                    <button onclick="changeQuantity(${index},-1)">
-                        -
-                    </button>
-
-
-                    <span>
-                        ${product.quantity}
-                    </span>
-
-
-                    <button onclick="changeQuantity(${index},1)">
-                        +
-                    </button>
-
-
-                </div>
-
-
-
-                <button class="remove-btn" onclick="removeItem(${index})">
-
-                    Kaldır
-
-                </button>
-
-
-            </div>
-
-
-        </div>
-
-
-        `;
-
+        totalQuantity += product.quantity;
 
     });
 
-
-
-    totalPrice.textContent =
-    "Toplam: " + total + " ₺";
-
+    cartCount.textContent = totalQuantity;
 
 }
 
+// ==============================
+// SEPET SAYFASI
+// ==============================
 
+const cartItems = document.getElementById("cart-items");
+const totalPrice = document.getElementById("total-price");
 
+if (cartItems) {
 
+    cartItems.innerHTML = "";
 
+    let total = 0;
 
-// Adet değiştirme
+    if (cart.length === 0) {
 
-function changeQuantity(index,amount){
+        cartItems.innerHTML = `
 
+        <div class="empty-cart">
 
-    cart[index].quantity += amount;
+            <div class="empty-icon">🌸</div>
 
+            <h3>Sepetiniz Henüz Boş</h3>
 
+            <p>Favori çiçeklerinizi keşfetmeye başlayın.</p>
 
-    if(cart[index].quantity <= 0){
+            <a href="flowers.html" class="btn">
+                Alışverişe Başla
+            </a>
 
+        </div>
 
-        cart.splice(index,1);
+        `;
 
+        if (totalPrice) {
+
+            totalPrice.textContent = "Toplam: 0 ₺";
+
+        }
+
+    } else {
+
+        cart.forEach((product, index) => {
+
+            total += product.price * product.quantity;
+
+            cartItems.innerHTML += `
+
+            <div class="cart-item">
+
+                <img src="../${product.image}" alt="${product.name}">
+
+                <div class="cart-info">
+
+                    <h3>${product.name}</h3>
+
+                    <p>${product.price} ₺</p>
+
+                    <div class="quantity">
+
+                        <button onclick="changeQuantity(${index},-1)">−</button>
+
+                        <span>${product.quantity}</span>
+
+                        <button onclick="changeQuantity(${index},1)">+</button>
+
+                    </div>
+
+                    <button class="remove-btn" onclick="removeItem(${index})">
+
+                        Kaldır
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            `;
+
+        });
+
+        if (totalPrice) {
+
+            totalPrice.textContent = "Toplam: " + total + " ₺";
+
+        }
 
     }
 
+}
 
+// ==============================
+// ADET DEĞİŞTİR
+// ==============================
 
-    localStorage.setItem("cart",JSON.stringify(cart));
+function changeQuantity(index, amount) {
 
+    cart[index].quantity += amount;
+
+    if (cart[index].quantity <= 0) {
+
+        cart.splice(index, 1);
+
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     location.reload();
 
-
 }
 
+// ==============================
+// ÜRÜN SİL
+// ==============================
 
+function removeItem(index) {
 
+    cart.splice(index, 1);
 
-
-
-// Ürün silme
-
-function removeItem(index){
-
-
-    cart.splice(index,1);
-
-
-    localStorage.setItem("cart",JSON.stringify(cart));
-
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     location.reload();
 
-
 }
 
+// ==============================
+// BİLDİRİM
+// ==============================
 
+function showNotification(message) {
 
+    const old = document.querySelector(".notification");
 
+    if (old) {
 
+        old.remove();
 
+    }
 
-// Bildirim
+    const notification = document.createElement("div");
 
-function showNotification(message){
+    notification.className = "notification";
 
-
-    const notification =
-    document.createElement("div");
-
-
-    notification.className="notification";
-
-
-    notification.innerHTML = "🌸 " + message;
-
+    notification.textContent = message;
 
     document.body.appendChild(notification);
 
+    setTimeout(() => {
 
+        notification.classList.add("show");
 
-    setTimeout(()=>{
+    }, 10);
 
+    setTimeout(() => {
 
-        notification.remove();
+        notification.classList.remove("show");
 
+        setTimeout(() => {
 
-    },2500);
+            notification.remove();
 
+        }, 300);
+
+    }, 2200);
 
 }
