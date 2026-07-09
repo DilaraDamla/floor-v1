@@ -3,128 +3,287 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Çiçekler | FLOOR</title>
+<title>Çiçekler | FLOOR</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
+
+
 <body>
+
 
 <header>
 
-    <nav class="navbar">
+<nav class="navbar">
 
-        <div class="logo">
-            FLOOR
-        </div>
 
-        <ul class="menu">
+<div class="logo">
+FLOOR
+</div>
 
-            <li><a href="../index.html">Anasayfa</a></li>
-            <li><a href="flowers.html">Çiçekler</a></li>
-            <li><a href="about.html">Hakkımızda</a></li>
-            <li><a href="contact.html">İletişim</a></li>
 
-        </ul>
 
-      <div class="icons">
+<ul class="menu">
+
+
+<li>
+<a href="../index.html">Anasayfa</a>
+</li>
+
+
+
+<li class="dropdown">
+
+
+<a href="flowers.html">Çiçekler</a>
+
+
+<ul class="dropdown-menu">
+
+
+<li>
+<a href="flowers.html">Tüm Çiçekler</a>
+</li>
+
+
+<li>
+<a href="gul.html">Güller</a>
+</li>
+
+
+<li>
+<a href="lale.html">Laleler</a>
+</li>
+
+
+<li>
+<a href="papatya.html">Papatyalar</a>
+</li>
+
+
+</ul>
+
+
+</li>
+
+
+
+<li>
+<a href="about.html">Hakkımızda</a>
+</li>
+
+
+
+<li>
+<a href="contact.html">İletişim</a>
+</li>
+
+
+</ul>
+
+
+
+
+<div class="icons">
 
     <button onclick="location.href='cart.html'">
+
         🛒 <span id="cart-count">0</span>
+
     </button>
 
 </div>
 
-    </nav>
+
+
+</nav>
 
 </header>
 
+
+
+
+
 <section class="products">
 
-    <h2>Tüm Çiçekler</h2>
 
-    <div class="product-list">
+<h2>
+Tüm Çiçekler
+</h2>
 
-       <div class="card">
 
-    <a href="product.html">
-        <img src="../images/gul.png" alt="Gül Buketi">
-    </a>
 
-    <h3>
-        <a href="product.html">Gül Buketi</a>
-    </h3>
+<div class="product-list">
 
-    <p class="price">950 ₺</p>
 
-    <button
-    class="btn add-cart"
-    data-id="1"
-    data-name="Gül Buketi"
-    data-price="950">
-    Sepete Ekle
-   
-</button>
-</div>
+
+
+
 <div class="card">
 
-    <img src="../images/lale.png" alt="Lale Buketi">
 
-    <h3>Lale Buketi</h3>
-
-    <p class="price">850 ₺</p>
-
-    <button
-        class="btn add-cart"
-        data-id="2"
-        data-name="Lale Buketi"
-        data-price="850">
-        Sepete Ekle
-    </button>
+<img src="../images/gul.png" alt="Gül Buketi">
 
 
-</div>
-      <div class="card">
+<h3>
+Gül Buketi
+</h3>
 
-    <img src="../images/orkide.png" alt="Beyaz Orkide">
 
-    <h3>Beyaz Orkide</h3>
+<p class="price">
+950 ₺
+</p>
 
-    <p class="price">1200 ₺</p>
 
-    <button
-        class="btn add-cart"
-        data-id="3"
-        data-name="Beyaz Orkide"
-        data-price="1200">
-        Sepete Ekle
-    </button>
+<button
+class="btn add-cart"
+data-id="1"
+data-name="Gül Buketi"
+data-price="950"
+data-image="images/gul.png">
+
+Sepete Ekle
+
+</button>
+
 
 </div>
 
-        <div class="card">
 
-    <img src="../images/papatya.png" alt="Papatya Buketi">
 
-    <h3>Papatya Buketi</h3>
 
-    <p class="price">780 ₺</p>
 
-    <button
-        class="btn add-cart"
-        data-id="4"
-        data-name="Papatya Buketi"
-        data-price="780">
-        Sepete Ekle
-    </button>
+
+
+<div class="card">
+
+
+<img src="../images/lale.png" alt="Lale Buketi">
+
+
+<h3>
+Lale Buketi
+</h3>
+
+
+<p class="price">
+850 ₺
+</p>
+
+
+<button
+class="btn add-cart"
+data-id="2"
+data-name="Lale Buketi"
+data-price="850"
+data-image="images/lale.png">
+
+Sepete Ekle
+
+</button>
+
 
 </div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="../images/orkide.png" alt="Beyaz Orkide">
+
+
+<h3>
+Beyaz Orkide
+</h3>
+
+
+<p class="price">
+1200 ₺
+</p>
+
+
+<button
+class="btn add-cart"
+data-id="3"
+data-name="Beyaz Orkide"
+data-price="1200"
+data-image="images/orkide.png">
+
+Sepete Ekle
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="../images/papatya.png" alt="Papatya Buketi">
+
+
+<h3>
+Papatya Buketi
+</h3>
+
+
+<p class="price">
+780 ₺
+</p>
+
+
+<button
+class="btn add-cart"
+data-id="4"
+data-name="Papatya Buketi"
+data-price="780"
+data-image="images/papatya.png">
+
+Sepete Ekle
+
+</button>
+
+
+</div>
+
+
+
+
+
+</div>
+
 
 </section>
 
+
+
+
+
 <script src="../script.js"></script>
 
+
 </body>
+
 
 </html>

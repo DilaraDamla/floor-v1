@@ -1369,3 +1369,164 @@ body{
     font-size:14px;
 
 }
+/* ===== FLOOR ELEGANT HERO ===== */
+
+.hero{
+
+    min-height:520px;
+
+    background:#fcfaf8;
+
+}
+
+
+.hero-content{
+
+    max-width:650px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:52px;
+
+    line-height:1.25;
+
+    letter-spacing:-1px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.hero p{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.hero-features{
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+
+.hero-features span{
+
+    font-size:13px;
+
+}
+
+
+
+.hero .btn{
+
+    padding:14px 38px;
+
+    font-size:15px;
+
+}
+/* ===== HERO SPLIT DESIGN ===== */
+
+
+.hero{
+
+    min-height:560px;
+
+    display:flex;
+
+    align-items:center;
+
+    background:#fcfaf8;
+
+}
+
+
+
+.hero-content{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:50px;
+
+}
+
+
+
+.hero-text{
+
+    flex:1;
+
+    text-align:left;
+
+}
+
+
+
+.hero h1{
+
+    font-size:58px;
+
+    color:#332b27;
+
+}
+
+
+
+.hero p{
+
+    margin:25px 0;
+
+    max-width:500px;
+
+}
+
+
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+
+.hero-image img{
+
+    width:450px;
+
+    height:450px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+}
