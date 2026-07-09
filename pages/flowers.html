@@ -3,15 +3,125 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Çiçekler</title>
+    <title>Çiçekler | FLOOR</title>
 
 </head>
-
 <body>
 
-<h1>Çiçekler Sayfası</h1>
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            FLOOR
+        </div>
+
+        <ul class="menu">
+
+            <li><a href="../index.html">Anasayfa</a></li>
+            <li><a href="flowers.html">Çiçekler</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+
+        </ul>
+
+      <div class="icons">
+
+    <button onclick="location.href='cart.html'">
+        🛒 <span id="cart-count">0</span>
+    </button>
+
+</div>
+
+    </nav>
+
+</header>
+
+<section class="products">
+
+    <h2>Tüm Çiçekler</h2>
+
+    <div class="product-list">
+
+       <div class="card">
+
+    <a href="product.html">
+        <img src="../images/gul.jpg" alt="Gül Buketi">
+    </a>
+
+    <h3>
+        <a href="product.html">Gül Buketi</a>
+    </h3>
+
+    <p class="price">950 ₺</p>
+
+    <button
+    class="btn add-cart"
+    data-id="1"
+    data-name="Gül Buketi"
+    data-price="950">
+    Sepete Ekle
+</button>
+<div class="card">
+
+    <img src="../images/lale.jpg" alt="Lale Buketi">
+
+    <h3>Lale Buketi</h3>
+
+    <p class="price">850 ₺</p>
+
+    <button
+        class="btn add-cart"
+        data-id="2"
+        data-name="Lale Buketi"
+        data-price="850">
+        Sepete Ekle
+    </button>
+
+
+</div>
+      <div class="card">
+
+    <img src="../images/orkide.jpg" alt="Beyaz Orkide">
+
+    <h3>Beyaz Orkide</h3>
+
+    <p class="price">1200 ₺</p>
+
+    <button
+        class="btn add-cart"
+        data-id="3"
+        data-name="Beyaz Orkide"
+        data-price="1200">
+        Sepete Ekle
+    </button>
+
+</div>
+
+        <div class="card">
+
+    <img src="../images/papatya.jpg" alt="Papatya Buketi">
+
+    <h3>Papatya Buketi</h3>
+
+    <p class="price">780 ₺</p>
+
+    <button
+        class="btn add-cart"
+        data-id="4"
+        data-name="Papatya Buketi"
+        data-price="780">
+        Sepete Ekle
+    </button>
+
+</div>
+
+</section>
+
+<script src="../script.js"></script>
 
 </body>
 
