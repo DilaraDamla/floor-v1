@@ -167,8 +167,7 @@ body{
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
-
+   grid-template-columns:repeat(3,1fr);
     gap:30px;
 
 }
@@ -519,17 +518,13 @@ footer p{
         rgba(255,255,255,.45),
         rgba(255,255,255,.45)
     ),
-    url("images/banner cicek.png");
+    url("images/cicek.png");
 
     background-size:cover;
 
     background-position:center;
 
-
-    background-size:cover;
-    background-position:center;
 }
-
 
 .hero h1{
 
@@ -582,5 +577,220 @@ footer p{
     transform:translateY(-10px);
 
     box-shadow:0 20px 35px rgba(0,0,0,.12);
+
+}
+/* ===== PREMIUM PRODUCT CARDS ===== */
+
+.card{
+
+    background:white;
+
+    border:none;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    transition:.35s ease;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+
+.card img{
+
+    height:330px;
+
+    transition:.5s ease;
+
+}
+
+
+.card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+.card h3{
+
+    font-family:"Playfair Display", serif;
+
+    font-size:24px;
+
+    color:#3b3030;
+
+    margin:22px 0 10px;
+
+}
+
+
+.card p{
+
+    color:#d89ca4;
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+
+.card button{
+
+    margin-top:5px;
+
+    padding:13px 35px;
+
+    background:#d89ca4;
+
+    font-size:15px;
+
+}
+
+
+.card button:hover{
+
+    background:#c9828d;
+
+}
+/* ===== PREMIUM NAVBAR ===== */
+
+.navbar{
+
+    height:90px;
+
+}
+
+
+.logo{
+
+    font-family:"Playfair Display", serif;
+
+    font-size:36px;
+
+    letter-spacing:5px;
+
+    color:#3b3030;
+
+}
+
+
+.menu a{
+
+    position:relative;
+
+    transition:.3s ease;
+
+}
+
+
+.menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#d89ca4;
+
+    transition:.3s ease;
+
+}
+
+
+.menu a:hover{
+
+    color:#d89ca4;
+
+}
+
+
+.menu a:hover::after{
+
+    width:100%;
+
+}
+
+
+.icons button{
+
+    transition:.3s ease;
+
+}
+
+
+.icons button:hover{
+
+    transform:scale(1.15);
+
+}
+/* ===== FLOWERS PAGE ===== */
+
+.products h2{
+
+    font-size:48px;
+
+    color:#3b3030;
+
+    margin-bottom:60px;
+
+}
+
+
+.product-list{
+
+    align-items:start;
+
+}
+
+
+.card a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+.card .price{
+
+    font-family:"Poppins", sans-serif;
+
+    font-size:22px;
+
+    color:#d89ca4;
+
+    font-weight:600;
+
+}
+
+
+.card button{
+
+    width:80%;
+
+    margin:auto;
+
+    display:block;
 
 }
