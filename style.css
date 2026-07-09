@@ -804,7 +804,7 @@ footer p{
 .dropdown-menu{
 
     position:absolute;
-    top:35px;
+    top:100px;
     left:0;
 
     background:white;
@@ -830,12 +830,30 @@ footer p{
 }
 
 
+
 .dropdown:hover .dropdown-menu{
 
     opacity:1;
+
     visibility:visible;
 
     transform:translateY(0);
+
+}
+
+
+.dropdown-menu:hover{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+.dropdown{
+
+    position:relative;
 
 }
 /* ===== PREMIUM CART ===== */
@@ -1634,7 +1652,7 @@ body{
 
     position:absolute;
 
-    top:35px;
+    top:100%;
 
     left:0;
 
@@ -2133,5 +2151,267 @@ footer{
 .footer-bottom p{
 
     color:#ccc;
+
+}
+/* ===== MOBILE RESPONSIVE ===== */
+
+
+@media (max-width:900px){
+
+
+/* navbar */
+
+.navbar{
+
+    width:90%;
+
+    height:auto;
+
+    padding:20px 0;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+.menu{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    text-align:center;
+
+}
+
+
+
+/* hero */
+
+.hero{
+
+    min-height:auto;
+
+    padding:60px 0;
+
+}
+
+
+
+.hero-content{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+
+.hero-text{
+
+    text-align:center;
+
+}
+
+
+
+.hero h1{
+
+    font-size:42px;
+
+}
+
+
+
+.hero-image img{
+
+    width:320px;
+
+    height:320px;
+
+}
+
+
+
+.hero-features{
+
+    flex-direction:column;
+
+}
+
+
+
+/* ürünler */
+
+.product-list{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.card img{
+
+    height:350px;
+
+}
+
+
+
+/* about */
+
+.about-content{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+
+.about-box{
+
+    width:100%;
+
+}
+
+
+
+/* yorumlar */
+
+.review-list{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+/* footer */
+
+.footer-content{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+
+.social-links{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+
+}
+/* Mobil yorum alanı boşluk düzeni */
+
+@media (max-width:900px){
+
+    .reviews h2{
+
+        margin-bottom:20px;
+
+        line-height:1.3;
+
+    }
+
+
+    .reviews .section-subtitle{
+
+        margin-top:0;
+
+        margin-bottom:35px;
+
+        padding:0 15px;
+
+        line-height:1.6;
+
+    }
+
+}
+/* ===== PRODUCT DETAIL PREMIUM ===== */
+
+
+.product-image{
+
+    flex:1;
+
+}
+
+
+
+.product-image img{
+
+    width:100%;
+
+    max-width:500px;
+
+    border-radius:30px;
+
+}
+
+
+
+.product-features{
+
+    list-style:none;
+
+    margin:25px 0;
+
+}
+
+
+
+.product-features li{
+
+    margin-bottom:12px;
+
+    font-family:"Poppins",sans-serif;
+
+    color:#665a54;
+
+}
+
+
+
+@media(max-width:900px){
+
+
+.product-detail{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+
+.product-image img{
+
+    width:320px;
+
+}
+
+
+
+.detail-text h2{
+
+    font-size:36px;
+
+}
+
 
 }
