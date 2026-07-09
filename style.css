@@ -1875,3 +1875,263 @@ body{
     font-size:25px;
 
 }
+/* ===== REVIEWS ===== */
+
+
+.reviews{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:100px auto;
+
+    text-align:center;
+
+}
+
+
+.reviews h2,
+.social h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:42px;
+
+    color:#332b27;
+
+}
+
+
+
+.review-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:50px;
+
+}
+
+
+
+.review-card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.06);
+
+}
+
+
+
+.stars{
+
+    color:#c59b5f;
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.review-card p{
+
+    color:#6f625c;
+
+    line-height:1.8;
+
+}
+
+
+
+.review-card h4{
+
+    margin-top:20px;
+
+    color:#332b27;
+
+}
+
+
+
+
+/* ===== SOCIAL ===== */
+
+
+.social{
+
+    background:#fcfaf8;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+}
+
+
+
+.social p{
+
+    color:#6f625c;
+
+    margin:20px;
+
+}
+
+
+
+.social-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+
+.social-links a{
+
+    text-decoration:none;
+
+    color:#332b27;
+
+    border:1px solid #332b27;
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+
+
+.social-links a:hover{
+
+    background:#332b27;
+
+    color:white;
+
+}
+/* ===== PREMIUM FOOTER ===== */
+
+
+footer{
+
+    background:#332b27;
+
+    color:white;
+
+    padding:70px 0 20px;
+
+    margin-top:100px;
+
+}
+
+
+
+.footer-content{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    gap:40px;
+
+}
+
+
+
+.footer-brand h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:40px;
+
+    letter-spacing:4px;
+
+}
+
+
+
+.footer-content h4{
+
+    margin-bottom:20px;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+
+
+.footer-content p{
+
+    color:#ddd;
+
+    line-height:1.8;
+
+}
+
+
+
+.footer-content a{
+
+    display:block;
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.footer-content a:hover{
+
+    color:#d89ca4;
+
+}
+
+
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    margin-top:50px;
+
+    padding-top:20px;
+
+    text-align:center;
+
+}
+
+
+
+.footer-bottom p{
+
+    color:#ccc;
+
+}
