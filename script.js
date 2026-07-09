@@ -263,7 +263,7 @@ function showNotification(message){
     notification.className="notification";
 
 
-    notification.innerHTML=message;
+    notification.innerHTML = "🌸 " + message;
 
 
     document.body.appendChild(notification);
