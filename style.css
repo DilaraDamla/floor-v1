@@ -2072,3 +2072,46 @@ footer{
     }
 
 }
+body{
+    animation:fadePage .5s ease;
+}
+
+@keyframes fadePage{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+.card,
+.review-card,
+.about-box div{
+
+    animation:cardUp .6s ease;
+
+}
+
+
+@keyframes cardUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
