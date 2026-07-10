@@ -57,13 +57,13 @@ FLOOR
 
 <div class="product-image">
 
-<img src="../images/gul.png" alt="Gül Buketi">
+<img id="product-image">
 
 </div>
 
 <div class="detail-text">
 
-<h1>Kırmızı Gül Buketi</h1>
+<h1 id="product-title"></h1>
 
 <div class="stars">
 ★★★★★
@@ -86,15 +86,11 @@ FLOOR
 
 </div>
 
-<p class="product-description">
-
-Kırmızı güllerden oluşan bu özel buket,
-doğum günü, yıldönümü, kutlama ve tüm özel
-anlar için özenle hazırlanır.
-Her sipariş aynı gün taze çiçeklerle hazırlanarak
-şık paketleme ile teslim edilir.
-
+<p
+class="product-description"
+id="product-description">
 </p>
+
 
 <div class="quantity-box">
 
@@ -107,11 +103,8 @@ Her sipariş aynı gün taze çiçeklerle hazırlanarak
 </div>
 
 <button
-class="btn add-cart"
-data-id="1"
-data-name="Kırmızı Gül Buketi"
-data-price="950"
-data-image="../images/gul.png">
+id="add-cart-btn"
+class="btn">
 
 🛒 Sepete Ekle
 
@@ -135,13 +128,13 @@ data-image="../images/gul.png">
 
 <div class="card">
 
-<img src="../images/lale.png">
+<img id="product-image">
 
 <h3>Lale Buketi</h3>
 
 <div class="stars">★★★★★</div>
 
-<p class="price">850 ₺</p>
+<div class="price" id="product-price"></div>
 
 <a href="product.html" class="detail-btn">
 
@@ -153,13 +146,13 @@ data-image="../images/gul.png">
 
 <div class="card">
 
-<img src="../images/orkide.png">
+<img id="product-image">
 
 <h3>Beyaz Orkide</h3>
 
 <div class="stars">★★★★★</div>
 
-<p class="price">1200 ₺</p>
+<div class="price" id="product-price"></div>
 
 <a href="product.html" class="detail-btn">
 
@@ -171,13 +164,13 @@ data-image="../images/gul.png">
 
 <div class="card">
 
-<img src="../images/papatya.png">
+<img id="product-image">
 
 <h3>Papatya Buketi</h3>
 
 <div class="stars">★★★★★</div>
 
-<p class="price">780 ₺</p>
+<div class="price" id="product-price"></div>
 
 <a href="product.html" class="detail-btn">
 
@@ -190,6 +183,8 @@ data-image="../images/gul.png">
 </div>
 
 </section>
+<script src="../products.js"></script>
+
 
 <script src="../script.js"></script>
 

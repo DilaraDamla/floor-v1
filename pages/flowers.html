@@ -1,531 +1,440 @@
-<!DOCTYPE html>
-<html lang="tr">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Çiçekler | FLOOR</title>
-
-<link rel="stylesheet" href="../style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-</head>
-
-
 <body>
-
 
 <header>
 
 <nav class="navbar">
 
+    <div class="logo">
+        FLOOR
+    </div>
 
-<div class="logo">
-FLOOR
-</div>
+    <ul class="menu">
 
+        <li><a href="../index.html">Anasayfa</a></li>
 
+        <li class="dropdown">
 
-<ul class="menu">
+            <a href="flowers.html">Çiçekler</a>
 
+            <ul class="dropdown-menu">
+                <li><a href="flowers.html">Tüm Çiçekler</a></li>
+                <li><a href="gul.html">Güller</a></li>
+                <li><a href="lale.html">Laleler</a></li>
+                <li><a href="orkide.html">Orkideler</a></li>
+                <li><a href="papatya.html">Papatyalar</a></li>
+            </ul>
 
-<li>
-<a href="../index.html">Anasayfa</a>
-</li>
+        </li>
 
+        <li><a href="about.html">Hakkımızda</a></li>
+        <li><a href="contact.html">İletişim</a></li>
 
+    </ul>
 
-<li class="dropdown">
+    <div class="icons">
 
+        <button onclick="location.href='cart.html'">
 
-<a href="flowers.html">Çiçekler</a>
+            🛒 <span id="cart-count">0</span>
 
+        </button>
 
-<ul class="dropdown-menu">
-
-
-<li>
-<a href="flowers.html">Tüm Çiçekler</a>
-</li>
-
-
-<li>
-<a href="gul.html">Güller</a>
-</li>
-
-
-<li>
-<a href="lale.html">Laleler</a>
-</li>
-
-
-<li>
-<a href="papatya.html">Papatyalar</a>
-</li>
-
-
-</ul>
-
-
-</li>
-
-
-
-<li>
-<a href="about.html">Hakkımızda</a>
-</li>
-
-
-
-<li>
-<a href="contact.html">İletişim</a>
-</li>
-
-
-</ul>
-
-
-
-
-<div class="icons">
-
-    <button onclick="location.href='cart.html'">
-
-        🛒 <span id="cart-count">0</span>
-
-    </button>
-
-</div>
-
-
+    </div>
 
 </nav>
 
 </header>
 
-
-
-
-
 <section class="products">
 
+<h2>Tüm Çiçekler</h2>
 
-<h2>
-Tüm Çiçekler
-</h2>
+<p class="section-subtitle">
 
+Her biri özenle hazırlanan taze çiçek koleksiyonlarımızı keşfedin.
 
+</p>
 
 <div class="product-list">
 
-
-
-
+<!-- KIRMIZI GÜL -->
 
 <div class="card">
 
+    <img src="../images/gul.png" alt="Kırmızı Gül Buketi">
 
-<img src="../images/gul.png" alt="Gül Buketi">
+    <div class="stars">★★★★★</div>
 
+    <p class="stock">🌿 Taze Kesim</p>
 
-<h3>
-Gül Buketi
-</h3>
+    <h3>Kırmızı Gül Buketi</h3>
 
+    <p class="price">950 ₺</p>
 
-<p class="price">
-950 ₺
-</p>
+    <button
+    class="btn add-cart"
+    data-id="1"
+    data-name="Kırmızı Gül Buketi"
+    data-price="950"
+    data-image="images/gul.png">
 
+        🛒 Sepete Ekle
 
-<button
-class="btn add-cart"
-data-id="1"
-data-name="Gül Buketi"
-data-price="950"
-data-image="../images/gul.png"
-<div class="stars">★★★★★</div>
+    </button>
 
-<p class="stock">🌿 Taze Kesim</p>
-Sepete Ekle
+    <a href="product.html?id=1" class="detail-btn">
 
-</button>
-<a href="product.html" class="detail-btn">
-    İncele
+        İncele
+
+    </a>
+
+</div>
+
+<!-- PEMBE GÜL -->
 
 <div class="card">
 
     <img src="../images/gul.png" alt="Pembe Gül Buketi">
 
-    <h3>Pembe Gül Buketi</h3>
-
     <div class="stars">★★★★★</div>
 
     <p class="stock">🌿 Taze Kesim</p>
 
+    <h3>Pembe Gül Buketi</h3>
+
     <p class="price">990 ₺</p>
 
     <button
-        class="btn add-cart"
-        data-id="5"
-        data-name="Pembe Gül Buketi"
-        data-price="990"
-        data-image="../images/gul.png">
+    class="btn add-cart"
+    data-id="5"
+    data-name="Pembe Gül Buketi"
+    data-price="990"
+    data-image="images/gul.png">
 
-        Sepete Ekle
+        🛒 Sepete Ekle
 
     </button>
 
-    <a href="product.html" class="detail-btn">
+    <a href="product.html?id=5" class="detail-btn">
+
         İncele
+
     </a>
 
-</div></a>
+</div>
+
+<!-- BEYAZ GÜL -->
+
 <div class="card">
 
     <img src="../images/gul.png" alt="Beyaz Gül Buketi">
 
-    <h3>Beyaz Gül Buketi</h3>
-
     <div class="stars">★★★★★</div>
 
     <p class="stock">🌿 Taze Kesim</p>
+
+    <h3>Beyaz Gül Buketi</h3>
 
     <p class="price">980 ₺</p>
 
     <button
-        class="btn add-cart"
-        data-id="6"
-        data-name="Beyaz Gül Buketi"
-        data-price="980"
-        data-image="../images/gul.png">
+    class="btn add-cart"
+    data-id="6"
+    data-name="Beyaz Gül Buketi"
+    data-price="980"
+    data-image="images/gul.png">
 
-        Sepete Ekle
+        🛒 Sepete Ekle
 
     </button>
 
-    <a href="product.html" class="detail-btn">
+    <a href="product.html?id=6" class="detail-btn">
+
         İncele
+
     </a>
 
-
-
 </div>
-
-
-
-
-
-
+<!-- LALE -->
 
 <div class="card">
 
+    <img src="../images/lale.png" alt="Lale Buketi">
 
-<img src="../images/lale.png" alt="Lale Buketi">
+    <div class="stars">★★★★★</div>
 
+    <p class="stock">🌿 Taze Kesim</p>
 
-<h3>
-Lale Buketi
-</h3>
+    <h3>Lale Buketi</h3>
 
+    <p class="price">850 ₺</p>
 
-<p class="price">
-850 ₺
-</p>
+    <button
+    class="btn add-cart"
+    data-id="2"
+    data-name="Lale Buketi"
+    data-price="850"
+    data-image="images/lale.png">
 
+        🛒 Sepete Ekle
 
-<button
-class="btn add-cart"
-data-id="2"
-data-name="Lale Buketi"
-data-price="850"
-data-image="../images/lale.png"
-<div class="stars">★★★★★</div>
+    </button>
 
-<p class="stock">🌿 Taze Kesim</p>
-Sepete Ekle
+    <a href="product.html?id=2" class="detail-btn">
 
-</button>
-<a href="product.html" class="detail-btn">
-    İncele
-</a>
+        İncele
 
-
+    </a>
 
 </div>
+
+<!-- RENKLİ LALE -->
+
 <div class="card">
 
     <img src="../images/lale.png" alt="Renkli Laleler">
 
-    <h3>Renkli Laleler</h3>
-
     <div class="stars">★★★★★</div>
 
     <p class="stock">🌿 Taze Kesim</p>
+
+    <h3>Renkli Laleler</h3>
 
     <p class="price">920 ₺</p>
 
     <button
-        class="btn add-cart"
-        data-id="7"
-        data-name="Renkli Laleler"
-        data-price="920"
-        data-image="../images/lale.png">
+    class="btn add-cart"
+    data-id="7"
+    data-name="Renkli Laleler"
+    data-price="920"
+    data-image="images/lale.png">
 
-        Sepete Ekle
+        🛒 Sepete Ekle
 
     </button>
 
-    <a href="product.html" class="detail-btn">
+    <a href="product.html?id=7" class="detail-btn">
+
         İncele
+
     </a>
 
 </div>
+
+<!-- BEYAZ LALE -->
+
 <div class="card">
 
     <img src="../images/lale.png" alt="Beyaz Laleler">
 
-    <h3>Beyaz Laleler</h3>
-
     <div class="stars">★★★★★</div>
 
     <p class="stock">🌿 Taze Kesim</p>
+
+    <h3>Beyaz Laleler</h3>
 
     <p class="price">900 ₺</p>
 
     <button
-        class="btn add-cart"
-        data-id="8"
-        data-name="Beyaz Laleler"
-        data-price="900"
-        data-image="../images/lale.png">
+    class="btn add-cart"
+    data-id="8"
+    data-name="Beyaz Laleler"
+    data-price="900"
+    data-image="images/lale.png">
 
-        Sepete Ekle
+        🛒 Sepete Ekle
 
     </button>
 
-    <a href="product.html" class="detail-btn">
+    <a href="product.html?id=8" class="detail-btn">
+
         İncele
+
+    </a>
+
+</div>
+<!-- BEYAZ ORKİDE -->
+
+<div class="card">
+
+    <img src="../images/orkide.png" alt="Beyaz Orkide">
+
+    <div class="stars">★★★★★</div>
+
+    <p class="stock">🌿 Taze Kesim</p>
+
+    <h3>Beyaz Orkide</h3>
+
+    <p class="price">1200 ₺</p>
+
+    <button
+    class="btn add-cart"
+    data-id="3"
+    data-name="Beyaz Orkide"
+    data-price="1200"
+    data-image="images/orkide.png">
+
+        🛒 Sepete Ekle
+
+    </button>
+
+    <a href="product.html?id=3" class="detail-btn">
+
+        İncele
+
     </a>
 
 </div>
 
+<!-- MOR ORKİDE -->
 
-
-
-
-
-
-<div class="card">
-
-
-<img src="../images/orkide.png" alt="Beyaz Orkide">
-
-
-<h3>
-Beyaz Orkide
-</h3>
-
-
-<p class="price">
-1200 ₺
-</p>
-
-
-<button
-class="btn add-cart"
-data-id="3"
-data-name="Beyaz Orkide"
-data-price="1200"
-data-image="../images/orkide.png"
-class="stars">★★★★★</div>
-
-<p class="stock">🌿 Taze Kesim</p>
-Sepete Ekle
-
-</button>
-<a href="product.html" class="detail-btn">
-    İncele
-</a>
-
-
-</div>
 <div class="card">
 
     <img src="../images/orkide.png" alt="Mor Orkide">
 
-    <h3>Mor Orkide</h3>
-
     <div class="stars">★★★★★</div>
 
     <p class="stock">🌿 Taze Kesim</p>
+
+    <h3>Mor Orkide</h3>
 
     <p class="price">1350 ₺</p>
 
     <button
-        class="btn add-cart"
-        data-id="9"
-        data-name="Mor Orkide"
-        data-price="1350"
-        data-image="../images/orkide.png">
+    class="btn add-cart"
+    data-id="9"
+    data-name="Mor Orkide"
+    data-price="1350"
+    data-image="images/orkide.png">
 
-        Sepete Ekle
+        🛒 Sepete Ekle
 
     </button>
 
-    <a href="product.html" class="detail-btn">
+    <a href="product.html?id=9" class="detail-btn">
+
         İncele
+
     </a>
 
 </div>
+
+<!-- MİNİ ORKİDE -->
+
 <div class="card">
 
     <img src="../images/orkide.png" alt="Mini Orkide">
 
-    <h3>Mini Orkide</h3>
-
     <div class="stars">★★★★★</div>
 
     <p class="stock">🌿 Taze Kesim</p>
+
+    <h3>Mini Orkide</h3>
 
     <p class="price">990 ₺</p>
 
     <button
-        class="btn add-cart"
-        data-id="10"
-        data-name="Mini Orkide"
-        data-price="990"
-        data-image="../images/orkide.png">
+    class="btn add-cart"
+    data-id="10"
+    data-name="Mini Orkide"
+    data-price="990"
+    data-image="images/orkide.png">
 
-        Sepete Ekle
+        🛒 Sepete Ekle
 
     </button>
 
-    <a href="product.html" class="detail-btn">
+    <a href="product.html?id=10" class="detail-btn">
+
         İncele
+
+    </a>
+
+</div>
+<!-- PAPATYA -->
+
+<div class="card">
+
+    <img src="../images/papatya.png" alt="Papatya Buketi">
+
+    <div class="stars">★★★★★</div>
+
+    <p class="stock">🌿 Taze Kesim</p>
+
+    <h3>Papatya Buketi</h3>
+
+    <p class="price">750 ₺</p>
+
+    <button
+    class="btn add-cart"
+    data-id="4"
+    data-name="Papatya Buketi"
+    data-price="750"
+    data-image="images/papatya.png">
+
+        🛒 Sepete Ekle
+
+    </button>
+
+    <a href="product.html?id=4" class="detail-btn">
+
+        İncele
+
     </a>
 
 </div>
 
 
-
-
-
-
-
+<!-- RENKLİ PAPATYA -->
 
 <div class="card">
 
-
-<img src="../images/papatya.png" alt="Papatya Buketi">
-
-
-<h3>
-Papatya Buketi
-</h3>
-
-
-<p class="price">
-780 ₺
-</p>
-
-
-<button
-class="btn add-cart"
-data-id="4"
-data-name="Papatya Buketi"
-data-price="780"
-data-image="../images/papatya.png"
-class="stars">★★★★★</div>
-
-<p class="stock">🌿 Taze Kesim</p>
-
-Sepete Ekle
-
-</button>
-<a href="product.html" class="detail-btn">
-    İncele
-</a>
-
-
-</div>
-<div class="card">
-
-    <img src="../images/papatya.png" alt="Kır Papatyası">
-
-    <h3>Kır Papatyası</h3>
+    <img src="../images/papatya.png" alt="Renkli Papatyalar">
 
     <div class="stars">★★★★★</div>
 
     <p class="stock">🌿 Taze Kesim</p>
+
+    <h3>Renkli Papatyalar</h3>
 
     <p class="price">820 ₺</p>
 
     <button
-        class="btn add-cart"
-        data-id="11"
-        data-name="Kır Papatyası"
-        data-price="820"
-        data-image="../images/papatya.png">
+    class="btn add-cart"
+    data-id="11"
+    data-name="Renkli Papatyalar"
+    data-price="820"
+    data-image="images/papatya.png">
 
-        Sepete Ekle
-
-    </button>
-
-    <a href="product.html" class="detail-btn">
-        İncele
-    </a>
-
-
-
-
-</div>
-<div class="card">
-
-    <img src="../images/papatya.png" alt="Renkli Papatya">
-
-    <h3>Renkli Papatya</h3>
-
-    <div class="stars">★★★★★</div>
-
-    <p class="stock">🌿 Taze Kesim</p>
-
-    <p class="price">870 ₺</p>
-
-    <button
-        class="btn add-cart"
-        data-id="12"
-        data-name="Renkli Papatya"
-        data-price="870"
-        data-image="../images/papatya.png">
-
-        Sepete Ekle
+        🛒 Sepete Ekle
 
     </button>
 
-    <a href="product.html" class="detail-btn">
+    <a href="product.html?id=11" class="detail-btn">
+
         İncele
+
     </a>
 
 </div>
 
+
+</div>
 
 </section>
 
 
+<footer>
 
+    <p>
+        © 2026 FLOOR Çiçekçilik | Sevgiyle hazırlanan çiçekler 🌸
+    </p>
+
+</footer>
 
 
 <script src="../script.js"></script>
 
-
 </body>
-
 
 </html>
