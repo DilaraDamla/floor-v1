@@ -36,7 +36,9 @@ FLOOR
 
 
 <li>
-<a href="../index.html">Anasayfa</a>
+<a href="../index.html">
+Anasayfa
+</a>
 </li>
 
 
@@ -62,17 +64,20 @@ Güller
 </a>
 </li>
 
+
 <li>
 <a href="lale.html">
 Laleler
 </a>
 </li>
 
+
 <li>
 <a href="orkide.html">
 Orkideler
 </a>
 </li>
+
 
 <li>
 <a href="papatya.html">
@@ -95,11 +100,13 @@ Hakkımızda
 </li>
 
 
+
 <li>
 <a href="contact.html">
 İletişim
 </a>
 </li>
+
 
 
 </ul>
@@ -110,8 +117,7 @@ Hakkımızda
 
 <button onclick="location.href='cart.html'">
 
-🛒 
-<span id="cart-count">0</span>
+🛒 <span id="cart-count">0</span>
 
 </button>
 
@@ -119,10 +125,10 @@ Hakkımızda
 </div>
 
 
+
 </nav>
 
 </header>
-
 
 
 
@@ -132,10 +138,7 @@ Hakkımızda
 <div class="product-image">
 
 
-<img 
-id="product-image"
-src=""
-alt="Ürün">
+<img id="product-image" src="" alt="Çiçek">
 
 
 </div>
@@ -146,7 +149,8 @@ alt="Ürün">
 <div class="detail-text">
 
 
-<h1 id="product-title"></h1>
+<h1 id="product-title">
+</h1>
 
 
 
@@ -162,12 +166,9 @@ alt="Ürün">
 
 
 
-<div 
-class="price"
-id="product-price">
+<div class="price" id="product-price">
 
 </div>
-
 
 
 
@@ -204,23 +205,19 @@ id="product-description">
 
 </p>
 
-
-
 <div class="quantity-box">
 
-
-<button onclick="decreaseQuantity()">
--
+<button onclick="changeProductQuantity(-1)">
+−
 </button>
 
 
-<span id="quantity">
+<span id="product-quantity">
 1
 </span>
 
 
-
-<button onclick="increaseQuantity()">
+<button onclick="changeProductQuantity(1)">
 +
 </button>
 
@@ -233,11 +230,10 @@ id="product-description">
 id="add-cart-btn"
 class="btn add-cart">
 
-
 🛒 Sepete Ekle
 
-
 </button>
+
 
 
 <button class="btn buy-now">
@@ -247,10 +243,16 @@ class="btn add-cart">
 </button>
 
 
+
 </div>
 
 
 </section>
+
+
+
+
+
 <section class="products">
 
 
@@ -260,17 +262,24 @@ Benzer Ürünler
 
 
 
+<p class="section-subtitle">
+
+Diğer özel çiçek koleksiyonlarımızı keşfedin.
+
+</p>
+
+
+
 <div class="product-list">
+
+
 
 
 
 <div class="card">
 
 
-<img 
-src="../images/lale.png"
-alt="Lale Buketi">
-
+<img src="../images/lale.png" alt="Lale Buketi">
 
 
 <div class="stars">
@@ -278,17 +287,14 @@ alt="Lale Buketi">
 </div>
 
 
-
 <h3>
 Lale Buketi
 </h3>
 
 
-
 <p class="price">
 850 ₺
 </p>
-
 
 
 <a href="product.html?id=2" class="detail-btn">
@@ -304,13 +310,12 @@ Lale Buketi
 
 
 
+
+
 <div class="card">
 
 
-<img 
-src="../images/orkide.png"
-alt="Beyaz Orkide">
-
+<img src="../images/orkide.png" alt="Beyaz Orkide">
 
 
 <div class="stars">
@@ -318,17 +323,14 @@ alt="Beyaz Orkide">
 </div>
 
 
-
 <h3>
 Beyaz Orkide
 </h3>
 
 
-
 <p class="price">
 1200 ₺
 </p>
-
 
 
 <a href="product.html?id=3" class="detail-btn">
@@ -344,13 +346,12 @@ Beyaz Orkide
 
 
 
+
+
 <div class="card">
 
 
-<img 
-src="../images/papatya.png"
-alt="Papatya Buketi">
-
+<img src="../images/papatya.png" alt="Papatya Buketi">
 
 
 <div class="stars">
@@ -358,17 +359,14 @@ alt="Papatya Buketi">
 </div>
 
 
-
 <h3>
 Papatya Buketi
 </h3>
 
 
-
 <p class="price">
 780 ₺
 </p>
-
 
 
 <a href="product.html?id=4" class="detail-btn">
@@ -410,6 +408,37 @@ Papatya Buketi
 <script src="../products.js"></script>
 
 <script src="../script.js"></script>
+
+
+
+<script>
+
+
+let quantity = 1;
+
+
+function changeProductQuantity(value){
+
+
+quantity += value;
+
+
+if(quantity < 1){
+
+quantity = 1;
+
+}
+
+
+document.getElementById("product-quantity").textContent = quantity;
+
+
+}
+
+
+
+</script>
+
 
 
 </body>
