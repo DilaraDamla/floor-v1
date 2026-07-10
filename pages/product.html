@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gül Buketi | FLOOR</title>
+<title>Ürün Detayı | FLOOR</title>
 
 <link rel="stylesheet" href="../style.css">
 
@@ -17,98 +17,228 @@
 
 </head>
 
+
 <body>
+
 
 <header>
 
 <nav class="navbar">
 
+
 <div class="logo">
 FLOOR
 </div>
 
+
+
 <ul class="menu">
 
-<li><a href="../index.html">Anasayfa</a></li>
 
-<li><a href="flowers.html">Çiçekler</a></li>
+<li>
+<a href="../index.html">Anasayfa</a>
+</li>
 
-<li><a href="about.html">Hakkımızda</a></li>
 
-<li><a href="contact.html">İletişim</a></li>
+
+<li class="dropdown">
+
+<a href="flowers.html">
+Çiçekler
+</a>
+
+
+<ul class="dropdown-menu">
+
+<li>
+<a href="flowers.html">
+Tüm Çiçekler
+</a>
+</li>
+
+<li>
+<a href="gul.html">
+Güller
+</a>
+</li>
+
+<li>
+<a href="lale.html">
+Laleler
+</a>
+</li>
+
+<li>
+<a href="orkide.html">
+Orkideler
+</a>
+</li>
+
+<li>
+<a href="papatya.html">
+Papatyalar
+</a>
+</li>
+
 
 </ul>
+
+
+</li>
+
+
+
+<li>
+<a href="about.html">
+Hakkımızda
+</a>
+</li>
+
+
+<li>
+<a href="contact.html">
+İletişim
+</a>
+</li>
+
+
+</ul>
+
+
 
 <div class="icons">
 
 <button onclick="location.href='cart.html'">
 
-🛒 <span id="cart-count">0</span>
+🛒 
+<span id="cart-count">0</span>
 
 </button>
 
+
 </div>
+
 
 </nav>
 
 </header>
 
+
+
+
 <section class="product-detail">
+
 
 <div class="product-image">
 
-<img id="product-image">
+
+<img 
+id="product-image"
+src=""
+alt="Ürün">
+
 
 </div>
+
+
+
 
 <div class="detail-text">
 
+
 <h1 id="product-title"></h1>
 
+
+
 <div class="stars">
+
 ★★★★★
-<span>(245 Değerlendirme)</span>
+
+<span>
+(245 Değerlendirme)
+</span>
+
 </div>
 
-<div class="price">
-950 ₺
+
+
+<div 
+class="price"
+id="product-price">
+
 </div>
+
+
+
 
 <div class="product-status">
 
-<span>✅ Stokta</span>
 
-<span>🚚 Aynı Gün Teslimat</span>
+<span>
+✅ Stokta
+</span>
 
-<span>🎁 Özel Paketleme</span>
 
-<span>🌿 Taze Çiçek Garantisi</span>
+<span>
+🚚 Aynı Gün Teslimat
+</span>
+
+
+<span>
+🎁 Özel Paketleme
+</span>
+
+
+<span>
+🌿 Taze Çiçek Garantisi
+</span>
+
 
 </div>
 
-<p
+
+
+<p 
 class="product-description"
 id="product-description">
+
 </p>
+
 
 
 <div class="quantity-box">
 
-<button>-</button>
 
-<span>1</span>
+<button onclick="decreaseQuantity()">
+-
+</button>
 
-<button>+</button>
+
+<span id="quantity">
+1
+</span>
+
+
+
+<button onclick="increaseQuantity()">
++
+</button>
+
 
 </div>
 
+
+
 <button
 id="add-cart-btn"
-class="btn">
+class="btn add-cart">
+
 
 🛒 Sepete Ekle
 
+
 </button>
+
 
 <button class="btn buy-now">
 
@@ -116,77 +246,171 @@ class="btn">
 
 </button>
 
+
 </div>
 
-</section>
 
+</section>
 <section class="products">
 
-<h2>Benzer Ürünler</h2>
+
+<h2>
+Benzer Ürünler
+</h2>
+
+
 
 <div class="product-list">
 
+
+
 <div class="card">
 
-<img id="product-image">
 
-<h3>Lale Buketi</h3>
+<img 
+src="../images/lale.png"
+alt="Lale Buketi">
 
-<div class="stars">★★★★★</div>
 
-<div class="price" id="product-price"></div>
 
-<a href="product.html" class="detail-btn">
+<div class="stars">
+★★★★★
+</div>
+
+
+
+<h3>
+Lale Buketi
+</h3>
+
+
+
+<p class="price">
+850 ₺
+</p>
+
+
+
+<a href="product.html?id=2" class="detail-btn">
 
 İncele
 
 </a>
 
+
 </div>
+
+
+
+
 
 <div class="card">
 
-<img id="product-image">
 
-<h3>Beyaz Orkide</h3>
+<img 
+src="../images/orkide.png"
+alt="Beyaz Orkide">
 
-<div class="stars">★★★★★</div>
 
-<div class="price" id="product-price"></div>
 
-<a href="product.html" class="detail-btn">
+<div class="stars">
+★★★★★
+</div>
+
+
+
+<h3>
+Beyaz Orkide
+</h3>
+
+
+
+<p class="price">
+1200 ₺
+</p>
+
+
+
+<a href="product.html?id=3" class="detail-btn">
 
 İncele
 
 </a>
 
+
 </div>
+
+
+
+
 
 <div class="card">
 
-<img id="product-image">
 
-<h3>Papatya Buketi</h3>
+<img 
+src="../images/papatya.png"
+alt="Papatya Buketi">
 
-<div class="stars">★★★★★</div>
 
-<div class="price" id="product-price"></div>
 
-<a href="product.html" class="detail-btn">
+<div class="stars">
+★★★★★
+</div>
+
+
+
+<h3>
+Papatya Buketi
+</h3>
+
+
+
+<p class="price">
+780 ₺
+</p>
+
+
+
+<a href="product.html?id=4" class="detail-btn">
 
 İncele
 
 </a>
 
-</div>
 
 </div>
+
+
+
+</div>
+
 
 </section>
+
+
+
+
+
+<footer>
+
+
+<p>
+
+© 2026 FLOOR Çiçekçilik | Sevgiyle hazırlanan çiçekler 🌸
+
+</p>
+
+
+</footer>
+
+
+
+
+
 <script src="../products.js"></script>
 
-
 <script src="../script.js"></script>
+
 
 </body>
 
