@@ -371,3 +371,33 @@ function decreaseQuantity(){
 
 
 }
+// ==============================
+// CHECKOUT TOPLAM HESAPLAMA
+// ==============================
+
+const checkoutTotal = document.getElementById("total-price");
+const checkoutSubtotal = document.getElementById("subtotal-price");
+
+
+if(checkoutTotal){
+
+    let total = 0;
+
+
+    cart.forEach(product => {
+
+        total += product.price * product.quantity;
+
+    });
+
+
+    checkoutTotal.textContent = total + " ₺";
+
+
+    if(checkoutSubtotal){
+
+        checkoutSubtotal.textContent = total + " ₺";
+
+    }
+
+}
