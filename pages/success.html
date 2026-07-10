@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sipariş Başarılı | FLOOR</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+FLOOR
+</div>
+
+<ul class="menu">
+
+<li><a href="../index.html">Anasayfa</a></li>
+
+<li><a href="flowers.html">Çiçekler</a></li>
+
+<li><a href="about.html">Hakkımızda</a></li>
+
+<li><a href="contact.html">İletişim</a></li>
+
+</ul>
+
+<div class="icons">
+
+<button onclick="location.href='cart.html'">
+
+🛒 <span id="cart-count">0</span>
+
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+<section class="success-page">
+
+<div class="success-card">
+
+<div class="success-icon">
+
+🌸
+
+</div>
+
+<h1>
+
+Siparişiniz Alındı!
+
+</h1>
+
+<p>
+
+Siparişiniz başarıyla oluşturuldu.
+
+En kısa sürede çiçekleriniz özenle hazırlanıp kargoya verilecektir.
+
+</p>
+
+<div class="order-info">
+
+<p>
+
+Sipariş No
+
+<strong>#2026001</strong>
+
+</p>
+
+<p>
+
+Tahmini Teslimat
+
+<strong>Aynı Gün</strong>
+
+</p>
+
+</div>
+
+<div class="success-buttons">
+
+<button class="btn"
+
+onclick="location.href='../index.html'">
+
+Ana Sayfaya Dön
+
+</button>
+
+<button class="btn"
+
+onclick="location.href='flowers.html'">
+
+Alışverişe Devam
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+localStorage.removeItem("cart");
+
+</script>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

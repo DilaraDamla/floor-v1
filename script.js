@@ -103,8 +103,8 @@ if (cartItems) {
             <p>Favori çiçeklerinizi keşfetmeye başlayın.</p>
 
             <a href="flowers.html" class="btn">
-                Alışverişe Başla
-            </a>
+    Çiçekleri Keşfet
+</a>
 
         </div>
 
@@ -126,7 +126,7 @@ if (cartItems) {
 
             <div class="cart-item">
 
-                <img src="../${product.image}" alt="${product.name}">
+               <img src="${product.image}" alt="${product.name}">
 
                 <div class="cart-info">
 
@@ -158,16 +158,22 @@ if (cartItems) {
 
         });
 
-        if (totalPrice) {
+       if (totalPrice) {
 
-            totalPrice.textContent = "Toplam: " + total + " ₺";
+    totalPrice.textContent = total + " ₺";
 
-        }
+    const subtotal = document.getElementById("subtotal-price");
+
+    if (subtotal) {
+
+        subtotal.textContent = total + " ₺";
 
     }
 
 }
+  }
 
+}
 // ==============================
 // ADET DEĞİŞTİR
 // ==============================
@@ -241,5 +247,25 @@ function showNotification(message) {
         }, 300);
 
     }, 2200);
+
+}
+const search=document.getElementById("search");
+
+if(search){
+
+search.addEventListener("keyup",()=>{
+
+const value=search.value.toLowerCase();
+
+document.querySelectorAll(".card").forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+card.style.display=text.includes(value)
+?"block":"none";
+
+});
+
+});
 
 }
