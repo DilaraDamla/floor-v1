@@ -25,7 +25,6 @@
 
 <nav class="navbar">
 
-
 <div class="logo">
 FLOOR
 </div>
@@ -47,35 +46,11 @@ FLOOR
 
 <ul class="dropdown-menu">
 
-<li>
-<a href="flowers.html">
-Tüm Çiçekler
-</a>
-</li>
-
-<li>
-<a href="gul.html">
-Güller
-</a>
-</li>
-
-<li>
-<a href="lale.html">
-Laleler
-</a>
-</li>
-
-<li>
-<a href="orkide.html">
-Orkideler
-</a>
-</li>
-
-<li>
-<a href="papatya.html">
-Papatyalar
-</a>
-</li>
+<li><a href="flowers.html">Tüm Çiçekler</a></li>
+<li><a href="gul.html">Güller</a></li>
+<li><a href="lale.html">Laleler</a></li>
+<li><a href="orkide.html">Orkideler</a></li>
+<li><a href="papatya.html">Papatyalar</a></li>
 
 </ul>
 
@@ -83,20 +58,16 @@ Papatyalar
 
 
 <li>
-<a href="about.html">
-Hakkımızda
-</a>
+<a href="about.html">Hakkımızda</a>
 </li>
 
 
 <li>
-<a href="contact.html">
-İletişim
-</a>
+<a href="contact.html">İletişim</a>
 </li>
 
-
 </ul>
+
 
 
 <div class="icons">
@@ -117,12 +88,13 @@ Hakkımızda
 
 
 
+
 <section class="product-detail">
 
 
 <div class="product-image">
 
-<img id="product-image" src="" alt="Çiçek">
+<img id="product-image" src="" alt="Ürün">
 
 </div>
 
@@ -137,6 +109,7 @@ Hakkımızda
 </h1>
 
 
+
 <div class="stars">
 
 ★★★★★
@@ -149,7 +122,9 @@ Hakkımızda
 
 
 
+
 <p class="price" id="product-price"></p>
+
 
 
 
@@ -169,11 +144,13 @@ Hakkımızda
 
 
 
+
 <p 
 class="product-description"
 id="product-description">
 
 </p>
+
 
 
 
@@ -201,9 +178,14 @@ id="product-description">
 
 
 
-<button
+
+<button 
+class="btn add-cart"
 id="add-cart-btn"
-class="btn add-cart">
+data-id=""
+data-name=""
+data-price=""
+data-image="">
 
 🛒 Sepete Ekle
 
@@ -211,9 +193,10 @@ class="btn add-cart">
 
 
 
-<button
+
+<button 
 class="btn buy-now"
-onclick="buyNow()">
+id="buy-now-btn">
 
 ⚡ Hemen Satın Al
 
@@ -224,6 +207,12 @@ onclick="buyNow()">
 
 
 </section>
+
+
+
+
+
+
 <section class="products">
 
 
@@ -245,13 +234,10 @@ Benzer Ürünler
 Lale Buketi
 </h3>
 
-<div class="stars">
-★★★★★
-</div>
-
 <p class="price">
 850 ₺
 </p>
+
 
 <a href="product.html?id=2" class="detail-btn">
 İncele
@@ -271,13 +257,11 @@ Lale Buketi
 Beyaz Orkide
 </h3>
 
-<div class="stars">
-★★★★★
-</div>
 
 <p class="price">
 1200 ₺
 </p>
+
 
 <a href="product.html?id=3" class="detail-btn">
 İncele
@@ -297,19 +281,18 @@ Beyaz Orkide
 Papatya Buketi
 </h3>
 
-<div class="stars">
-★★★★★
-</div>
 
 <p class="price">
 780 ₺
 </p>
+
 
 <a href="product.html?id=4" class="detail-btn">
 İncele
 </a>
 
 </div>
+
 
 
 </div>
@@ -327,219 +310,60 @@ Papatya Buketi
 
 
 
-
 <script>
-
-
-// ÜRÜN BİLGİLERİNİ GETİR
-
-const params = new URLSearchParams(window.location.search);
-
-const id = Number(params.get("id"));
-
-
-const product = products.find(item => item.id === id);
-
-
-
-if(product){
-
-
-document.getElementById("product-image").src = product.image;
-
-
-document.getElementById("product-title").textContent = product.name;
-
-
-document.getElementById("product-price").textContent =
-product.price + " ₺";
-
-
-document.getElementById("product-description").textContent =
-product.description;
-
-
-
-const button = document.getElementById("add-cart-btn");
-
-
-button.dataset.id = product.id;
-
-button.dataset.name = product.name;
-
-button.dataset.price = product.price;
-
-button.dataset.image = product.image;
-
-
-}
-
-
-
-
-
-// ADET KONTROLÜ
-
-
-let quantity = 1;
-
-
-const quantityText = document.getElementById("quantity");
-
-const plusBtn = document.getElementById("plus-btn");
-
-const minusBtn = document.getElementById("minus-btn");
-
-
-
-plusBtn.addEventListener("click",()=>{
-
-
-quantity++;
-
-quantityText.textContent = quantity;
-
-
-});
-
-
-
-
-
-minusBtn.addEventListener("click",()=>{
-
-
-if(quantity > 1){
-
-quantity--;
-
-}
-
-
-quantityText.textContent = quantity;
-
-
-});
-
-
-
-
-
-
-// SEPETE EKLE
-
-
-const addButton = document.getElementById("add-cart-btn");
-
-
-
-addButton.addEventListener("click",()=>{
-
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-
-
-const productCart = {
-
-
-id:addButton.dataset.id,
-
-name:addButton.dataset.name,
-
-price:Number(addButton.dataset.price),
-
-image:addButton.dataset.image,
-
-quantity:quantity
-
-
-};
-
-
-
-
-const existing = cart.find(item => item.id == productCart.id);
-
-
-
-
-if(existing){
-
-existing.quantity += quantity;
-
-}
-
-else{
-
-cart.push(productCart);
-
-}
-
-
-
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
-
-
-
-
-showNotification(
-"🌸 " + productCart.name + " sepete eklendi"
-);
-
-
-
-});
-
-
-
-
 
 
 // HEMEN SATIN AL
 
-
-function buyNow(){
-
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const buyButton =
+document.getElementById("buy-now-btn");
 
 
+if(buyButton){
 
-const productCart = {
+
+buyButton.onclick=function(){
 
 
-id:product.id,
+const button =
+document.getElementById("add-cart-btn");
 
-name:product.name,
 
-price:product.price,
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
 
-image:product.image,
 
-quantity:quantity
 
+const product={
+
+id:button.dataset.id,
+
+name:button.dataset.name,
+
+price:Number(button.dataset.price),
+
+image:button.dataset.image,
+
+quantity:Number(
+document.getElementById("quantity").textContent
+)
 
 };
 
 
 
-const existing = cart.find(item => item.id == productCart.id);
+let existing =
+cart.find(item=>item.id==product.id);
 
 
 
 if(existing){
 
-existing.quantity += quantity;
+existing.quantity += product.quantity;
 
-}
+}else{
 
-else{
-
-cart.push(productCart);
+cart.push(product);
 
 }
 
@@ -552,7 +376,10 @@ JSON.stringify(cart)
 
 
 
-location.href="checkout.html";
+window.location.href="checkout.html";
+
+
+};
 
 
 }

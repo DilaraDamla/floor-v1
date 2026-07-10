@@ -3,75 +3,93 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FLOOR | Çiçekçilik</title>
+<title>FLOOR | Çiçekçilik</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
+
 <body>
+
 
 <header>
 
 <nav class="navbar">
 
+
 <div class="logo">
 FLOOR
 </div>
 
+
 <ul class="menu">
+
 
 <li>
 <a href="index.html">Anasayfa</a>
 </li>
 
+
 <li class="dropdown">
 
 <a href="pages/flowers.html">Çiçekler</a>
 
+
 <ul class="dropdown-menu">
+
 
 <li>
 <a href="pages/flowers.html">Tüm Çiçekler</a>
 </li>
 
+
 <li>
 <a href="pages/gul.html">Güller</a>
 </li>
+
 
 <li>
 <a href="pages/lale.html">Laleler</a>
 </li>
 
+
 <li>
 <a href="pages/orkide.html">Orkideler</a>
 </li>
+
 
 <li>
 <a href="pages/papatya.html">Papatyalar</a>
 </li>
 
+
 </ul>
 
 </li>
+
 
 <li>
 <a href="pages/about.html">Hakkımızda</a>
 </li>
 
+
 <li>
 <a href="pages/contact.html">İletişim</a>
 </li>
 
+
 </ul>
+
+
 
 <div class="icons">
 
@@ -82,36 +100,56 @@ FLOOR
 
 </button>
 
+
 </div>
+
+
+
 <div class="search-box">
 
-<input
+<input 
 type="text"
 id="search"
 placeholder="Çiçek Ara...">
 
 </div>
+
+
 </nav>
 
 </header>
 
+
+
+
 <section class="hero">
+
 
 <div class="hero-content">
 
+
 <div class="hero-text">
 
+
 <h1>
+
 Çiçeklerin<br>
 En Zarif Hali
+
 </h1>
 
+
 <p>
+
 Özel anlarınıza eşlik eden,
 özenle hazırlanmış zarif çiçek tasarımları.
+
 </p>
 
+
+
 <div class="hero-features">
+
 
 <span>🌿 Taze Çiçekler</span>
 
@@ -119,100 +157,212 @@ En Zarif Hali
 
 <span>🚚 Aynı Gün Teslimat</span>
 
+
 </div>
+
+
 
 <a href="pages/flowers.html" class="btn">
+
 Sipariş Ver
+
 </a>
 
+
 </div>
+
+
 
 <div class="hero-image">
 
+
 <img src="images/cicek.png" alt="Çiçek Aranjmanı">
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </section>
 
+
+
+
+
 <section class="products">
 
-<h2>Öne Çıkan Tasarımlar</h2>
+
+<h2>
+
+Öne Çıkan Tasarımlar
+
+</h2>
+
 
 <p class="section-subtitle">
+
 Özel günleriniz için özenle hazırlanan en sevilen çiçek koleksiyonlarımız.
+
 </p>
+
+
+
 
 <div class="product-list">
 
+
+
 <div class="card">
+
+
 <span class="badge">
 
 Çok Satan
 
 </span>
-<a href="pages/product.html?id=1"></a>
+
+
+
+<a href="pages/product.html?id=1">
+
+
 <img src="images/gul.png" alt="Gül Buketi">
+
+
 </a>
 
-<h3>Gül Buketi</h3>
 
-<p class="price">950 ₺</p>
 
-<button
-id="add-cart-btn"
-class="btn">
+<h3>
+
+Gül Buketi
+
+</h3>
+
+
+<p class="price">
+
+950 ₺
+
+</p>
+
+
+
+<button 
+class="btn add-cart"
+data-id="1"
+data-name="Gül Buketi"
+data-price="950"
+data-image="images/gul.png">
+
 
 🛒 Sepete Ekle
 
+
 </button>
+
+
+
 </div>
+
+
+
+
 
 <div class="card">
 
-<a href="pages/product.html?id=2"></a>
+
+<a href="pages/product.html?id=2">
+
+
 <img src="images/lale.png" alt="Lale Buketi">
+
+
 </a>
 
-<h3>Lale Buketi</h3>
 
-<p class="price">850 ₺</p>
 
-<button
-id="add-cart-btn"
-class="btn">
+<h3>
+
+Lale Buketi
+
+</h3>
+
+
+<p class="price">
+
+850 ₺
+
+</p>
+
+
+
+<button 
+class="btn add-cart"
+data-id="2"
+data-name="Lale Buketi"
+data-price="850"
+data-image="images/lale.png">
+
 
 🛒 Sepete Ekle
+
 
 </button>
 
 
-
 </div>
-
 <div class="card">
 
-<a href="pages/product.html?id=3"></a>
+
+<a href="pages/product.html?id=3">
+
+
 <img src="images/orkide.png" alt="Orkide">
+
+
 </a>
 
-<h3>Beyaz Orkide</h3>
 
-<p class="price">1200 ₺</p>
 
-<button
-id="add-cart-btn"
-class="btn">
+<h3>
+
+Beyaz Orkide
+
+</h3>
+
+
+<p class="price">
+
+1200 ₺
+
+</p>
+
+
+
+<button 
+class="btn add-cart"
+data-id="3"
+data-name="Beyaz Orkide"
+data-price="1200"
+data-image="images/orkide.png">
+
 
 🛒 Sepete Ekle
 
+
 </button>
 
-</div>
 
 </div>
+
+
+
+</div>
+
+
 
 <a href="pages/flowers.html" class="all-products">
 
@@ -220,22 +370,40 @@ Tüm Çiçekleri Keşfet →
 
 </a>
 
+
 </section>
+
+
+
+
+
+
 <section class="about">
+
 
 <div class="about-content">
 
+
 <div class="about-text">
 
+
 <h2>
+
 Doğadan Gelen Zarafet
+
 </h2>
 
+
+
 <p>
+
 FLOOR, özel anlarınıza eşlik edecek taptaze çiçekleri
 zarif tasarımlarla buluşturur. Her buket özenle hazırlanır,
 kaliteli çiçeklerle tasarlanır ve sevgiyle teslim edilir.
+
 </p>
+
+
 
 <a href="pages/about.html" class="about-btn">
 
@@ -243,45 +411,65 @@ Hikayemizi Keşfet
 
 </a>
 
+
 </div>
 
 
 
+
+
 <div class="about-box">
+
 
 <div>
 
 <strong>✦</strong>
 
 <p>
+
 Özel Tasarım
+
 </p>
 
 </div>
+
+
+
 
 <div>
 
 <strong>🌿</strong>
 
 <p>
+
 Taze Çiçekler
+
 </p>
 
 </div>
+
+
+
+
 
 <div>
 
 <strong>🚚</strong>
 
 <p>
+
 Hızlı Teslimat
+
 </p>
 
 </div>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </section>
 
@@ -289,36 +477,65 @@ Hızlı Teslimat
 
 
 
+
+
 <section class="reviews">
+
 
 <h2>
 
 Müşterilerimiz Ne Diyor?
 
 </h2>
+
+
+
+
 <div class="review-stats">
 
-    <div>
-        <strong>4.9</strong>
-        <span>Ortalama Puan</span>
-    </div>
 
-    <div>
-        <strong>2.500+</strong>
-        <span>Mutlu Müşteri</span>
-    </div>
+<div>
 
-    <div>
-        <strong>98%</strong>
-        <span>Memnuniyet</span>
-    </div>
+<strong>4.9</strong>
+
+<span>Ortalama Puan</span>
 
 </div>
+
+
+
+<div>
+
+<strong>2.500+</strong>
+
+<span>Mutlu Müşteri</span>
+
+</div>
+
+
+
+<div>
+
+<strong>98%</strong>
+
+<span>Memnuniyet</span>
+
+</div>
+
+
+</div>
+
+
+
+
 <p class="section-subtitle">
 
 Mutluluğunuza ortak olduğumuz özel anlardan birkaç güzel yorum.
 
 </p>
+
+
+
 
 <div class="review-list">
 
@@ -326,11 +543,13 @@ Mutluluğunuza ortak olduğumuz özel anlardan birkaç güzel yorum.
 
 <div class="review-card">
 
+
 <div class="stars">
 
 ★★★★★
 
 </div>
+
 
 <p>
 
@@ -339,11 +558,13 @@ Teslimat çok hızlıydı."
 
 </p>
 
+
 <h4>
 
 — Zeynep
 
 </h4>
+
 
 </div>
 
@@ -353,11 +574,13 @@ Teslimat çok hızlıydı."
 
 <div class="review-card">
 
+
 <div class="stars">
 
 ★★★★★
 
 </div>
+
 
 <p>
 
@@ -366,11 +589,13 @@ Herkes bukete hayran kaldı."
 
 </p>
 
+
 <h4>
 
 — Elif
 
 </h4>
+
 
 </div>
 
@@ -380,11 +605,13 @@ Herkes bukete hayran kaldı."
 
 <div class="review-card">
 
+
 <div class="stars">
 
 ★★★★★
 
 </div>
+
 
 <p>
 
@@ -392,17 +619,20 @@ Herkes bukete hayran kaldı."
 
 </p>
 
+
 <h4>
 
 — Derya
 
 </h4>
 
-</div>
-
-
 
 </div>
+
+
+
+</div>
+
 
 </section>
 
@@ -410,7 +640,10 @@ Herkes bukete hayran kaldı."
 
 
 
+
+
 <section class="social">
+
 
 <h2>
 
@@ -418,12 +651,19 @@ Bizi Takip Edin
 
 </h2>
 
+
+
 <p>
 
 Yeni koleksiyonlarımız ve ilham veren tasarımlarımız için.
 
 </p>
+
+
+
+
 <div class="social-gallery">
+
 
 <img src="images/gul.png" alt="">
 
@@ -433,46 +673,66 @@ Yeni koleksiyonlarımız ve ilham veren tasarımlarımız için.
 
 <img src="images/papatya.png" alt="">
 
+
 </div>
+
+
+
 
 <div class="social-links">
 
+
 <a href="#">
+
 Instagram
+
 </a>
 
+
 <a href="#">
+
 Pinterest
+
 </a>
 
+
 <a href="#">
+
 TikTok
+
 </a>
+
 
 </div>
 
+
+
 </section>
-
-
-
-
-
 <footer>
-    <p class="footer-slogan">
+
+
+<p class="footer-slogan">
 
 Flowers crafted with love.
 
 </p>
 
+
+
+
 <div class="footer-content">
 
+
+
 <div class="footer-brand">
+
 
 <h3>
 
 FLOOR
 
 </h3>
+
 
 <p>
 
@@ -481,11 +741,15 @@ FLOOR
 
 </p>
 
+
 </div>
 
 
 
+
+
 <div class="footer-links">
+
 
 <h4>
 
@@ -493,23 +757,38 @@ Keşfet
 
 </h4>
 
+
 <a href="index.html">
+
 Anasayfa
+
 </a>
+
 
 <a href="pages/flowers.html">
+
 Çiçekler
+
 </a>
+
 
 <a href="pages/about.html">
+
 Hakkımızda
+
 </a>
+
 
 <a href="pages/contact.html">
+
 İletişim
+
 </a>
 
+
 </div>
+
+
 
 
 
@@ -517,25 +796,41 @@ Hakkımızda
 
 <div class="footer-contact">
 
+
 <h4>
 
 İletişim
 
 </h4>
 
+
+
 <p>
+
 📍 İstanbul
+
 </p>
 
+
+
 <p>
+
 📞 0555 555 55 55
+
 </p>
 
+
+
 <p>
+
 ✉ info@floor.com
+
 </p>
+
 
 </div>
+
+
 
 
 
@@ -543,31 +838,51 @@ Hakkımızda
 
 <div class="footer-social">
 
+
 <h4>
 
 Takip Et
 
 </h4>
 
+
+
 <a href="#">
+
 Instagram
+
 </a>
 
+
+
 <a href="#">
+
 Pinterest
+
 </a>
+
+
 
 <a href="#">
+
 TikTok
+
 </a>
 
-</div>
+
 
 </div>
+
+
+
+</div>
+
+
 
 
 
 <div class="footer-bottom">
+
 
 <p>
 
@@ -575,11 +890,20 @@ TikTok
 
 </p>
 
+
 </div>
+
+
 
 </footer>
 
+
+
+
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>

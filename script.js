@@ -1,341 +1,405 @@
 // ==============================
-// FLOOR - SEPET SİSTEMİ
+// FLOOR v2.1 SCRIPT
 // ==============================
 
-const buttons = document.querySelectorAll(".add-cart");
-const cartCount = document.getElementById("cart-count");
+
+// ==============================
+// SEPET VERİSİ
+// ==============================
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Eski ürünlere quantity ekle
-cart.forEach(product => {
-    if (!product.quantity) {
-        product.quantity = 1;
-    }
-});
 
-// Sepet sayısını güncelle
-updateCartCount();
+// eski verileri düzelt
 
-// ==============================
-// ÜRÜN EKLE
-// ==============================
+cart = cart.map(product => {
 
-buttons.forEach(button => {
+    return {
 
-    button.addEventListener("click", () => {
+        ...product,
 
-        const product = {
+        quantity: Number(product.quantity) || 1
 
-            id: button.dataset.id,
-            name: button.dataset.name,
-            price: Number(button.dataset.price),
-            image: button.dataset.image,
-            quantity: 1
-
-        };
-
-        const existing = cart.find(item => item.id === product.id);
-
-        if (existing) {
-
-            existing.quantity++;
-
-        } else {
-
-            cart.push(product);
-
-        }
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        updateCartCount();
-
-        showNotification("🌸 " + product.name + " sepete eklendi");
-
-    });
+    };
 
 });
 
-// ==============================
-// SEPET SAYISI
-// ==============================
 
-function updateCartCount() {
+// güncel sepeti kaydet
 
-    if (!cartCount) return;
+localStorage.setItem(
+    "cart",
+    JSON.stringify(cart)
+);
 
-    let totalQuantity = 0;
 
-    cart.forEach(product => {
 
-        totalQuantity += product.quantity;
-
-    });
-
-    cartCount.textContent = totalQuantity;
-
-}
 
 // ==============================
-// SEPET SAYFASI
+// SEPET SAYACI
 // ==============================
 
-const cartItems = document.getElementById("cart-items");
-const totalPrice = document.getElementById("total-price");
 
-if (cartItems) {
+function updateCartCount(){
 
-    cartItems.innerHTML = "";
+
+    const cartCount =
+    document.getElementById("cart-count");
+
+
+    if(!cartCount) return;
+
+
 
     let total = 0;
 
-    if (cart.length === 0) {
 
-        cartItems.innerHTML = `
 
-        <div class="empty-cart">
+    cart.forEach(item=>{
 
-            <div class="empty-icon">🌸</div>
 
-            <h3>Sepetiniz Henüz Boş</h3>
+        total += Number(item.quantity);
 
-            <p>Favori çiçeklerinizi keşfetmeye başlayın.</p>
 
-            <a href="flowers.html" class="btn">
-    Çiçekleri Keşfet
-</a>
+    });
 
-        </div>
 
-        `;
 
-        if (totalPrice) {
+    cartCount.textContent = total;
 
-            totalPrice.textContent = "Toplam: 0 ₺";
 
-        }
+}
 
-    } else {
 
-        cart.forEach((product, index) => {
 
-            total += product.price * product.quantity;
+updateCartCount();
 
-            cartItems.innerHTML += `
 
-            <div class="cart-item">
 
-               <img src="${product.image}" alt="${product.name}">
 
-                <div class="cart-info">
 
-                    <h3>${product.name}</h3>
+// ==============================
+// SEPETE EKLE
+// ==============================
 
-                    <p>${product.price} ₺</p>
 
-                    <div class="quantity">
+document.addEventListener("click", function(e){
 
-                        <button onclick="changeQuantity(${index},-1)">−</button>
 
-                        <span>${product.quantity}</span>
 
-                        <button onclick="changeQuantity(${index},1)">+</button>
+    const button =
+    e.target.closest(".add-cart");
 
-                    </div>
 
-                    <button class="remove-btn" onclick="removeItem(${index})">
 
-                        Kaldır
+    if(!button) return;
 
-                    </button>
 
-                </div>
 
-            </div>
 
-            `;
+    const quantityElement =
+    document.getElementById("quantity");
 
-        });
 
-       if (totalPrice) {
 
-    totalPrice.textContent = total + " ₺";
+    const selectedQuantity =
+    quantityElement
+    ? Number(quantityElement.textContent)
+    : 1;
 
-    const subtotal = document.getElementById("subtotal-price");
 
-    if (subtotal) {
 
-        subtotal.textContent = total + " ₺";
+
+    const product = {
+
+
+        id: button.dataset.id,
+
+
+        name: button.dataset.name,
+
+
+        price: Number(button.dataset.price),
+
+
+        image: button.dataset.image,
+
+
+        quantity: selectedQuantity
+
+
+    };
+
+
+
+
+
+    const existing =
+    cart.find(item => item.id == product.id);
+
+
+
+
+    if(existing){
+
+
+        existing.quantity =
+        Number(existing.quantity) + selectedQuantity;
+
+
+    }
+    else{
+
+
+        cart.push(product);
+
 
     }
 
-}
-  }
 
-}
+
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+
+
+    updateCartCount();
+
+
+
+    showNotification(
+        "🌸 " + product.name + " sepete eklendi"
+    );
+
+
+
+});
 // ==============================
-// ADET DEĞİŞTİR
+// CHECKOUT TOPLAM
 // ==============================
 
-function changeQuantity(index, amount) {
 
-    cart[index].quantity += amount;
+const checkoutTotal =
+document.getElementById("total-price");
 
-    if (cart[index].quantity <= 0) {
 
-        cart.splice(index, 1);
+if(checkoutTotal){
 
-    }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+    let checkoutSum = 0;
 
-    location.reload();
+
+    cart.forEach(item=>{
+
+
+        checkoutSum +=
+        Number(item.price) *
+        Number(item.quantity);
+
+
+    });
+
+
+
+    checkoutTotal.textContent =
+    checkoutSum + " ₺";
+
 
 }
 
-// ==============================
-// ÜRÜN SİL
-// ==============================
 
-function removeItem(index) {
 
-    cart.splice(index, 1);
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    location.reload();
-
-}
 
 // ==============================
 // BİLDİRİM
 // ==============================
 
-function showNotification(message) {
 
-    const old = document.querySelector(".notification");
+function showNotification(message){
 
-    if (old) {
+
+
+    const old =
+    document.querySelector(".notification");
+
+
+
+    if(old){
 
         old.remove();
 
     }
 
-    const notification = document.createElement("div");
 
-    notification.className = "notification";
 
-    notification.textContent = message;
+    const box =
+    document.createElement("div");
 
-    document.body.appendChild(notification);
 
-    setTimeout(() => {
 
-        notification.classList.add("show");
+    box.className="notification";
 
-    }, 10);
 
-    setTimeout(() => {
+    box.innerHTML = message;
 
-        notification.classList.remove("show");
 
-        setTimeout(() => {
 
-            notification.remove();
+    document.body.appendChild(box);
 
-        }, 300);
 
-    }, 2200);
+
+
+    setTimeout(()=>{
+
+
+        box.classList.add("show");
+
+
+    },50);
+
+
+
+
+    setTimeout(()=>{
+
+
+        box.classList.remove("show");
+
+
+
+        setTimeout(()=>{
+
+
+            box.remove();
+
+
+        },400);
+
+
+
+    },2500);
+
+
 
 }
-const search=document.getElementById("search");
 
-if(search){
-
-search.addEventListener("keyup",()=>{
-
-const value=search.value.toLowerCase();
-
-document.querySelectorAll(".card").forEach(card=>{
-
-const text=card.innerText.toLowerCase();
-
-card.style.display=text.includes(value)
-?"block":"none";
-
-});
-
-});
-
-}
 // ==============================
 // ÜRÜN DETAY SAYFASI
 // ==============================
 
 
-const title = document.getElementById("product-title");
-
-
-if(title){
-
-
-    const params = new URLSearchParams(window.location.search);
-
-
-    const id = Number(params.get("id"));
+const productTitle =
+document.getElementById("product-title");
 
 
 
-    const product = products.find(item => item.id === id);
+if(productTitle){
+
+
+    const params =
+    new URLSearchParams(window.location.search);
 
 
 
-    if(product){
-
-
-        document.getElementById("product-image").src = product.image;
-
-
-        document.getElementById("product-image").alt = product.name;
+    const id =
+    Number(params.get("id"));
 
 
 
-        document.getElementById("product-title").textContent =
-        product.name;
+    if(typeof products !== "undefined"){
+
+
+        const product =
+        products.find(item=>item.id === id);
 
 
 
-        document.getElementById("product-price").textContent =
-        product.price + " ₺";
+        if(product){
 
 
 
-        document.getElementById("product-description").textContent =
-        product.description;
+            const image =
+            document.getElementById("product-image");
+
+            const title =
+            document.getElementById("product-title");
+
+            const price =
+            document.getElementById("product-price");
+
+            const description =
+            document.getElementById("product-description");
 
 
 
-        const btn = document.getElementById("add-cart-btn");
+            if(image)
+            image.src = product.image;
 
 
 
-        btn.dataset.id = product.id;
+            if(title)
+            title.textContent = product.name;
 
-        btn.dataset.name = product.name;
 
-        btn.dataset.price = product.price;
 
-        btn.dataset.image = product.image;
+            if(price)
+            price.textContent = product.price + " ₺";
 
+
+
+            if(description)
+            description.textContent = product.description;
+
+
+
+
+            const button =
+            document.getElementById("add-cart-btn");
+
+
+
+            if(button){
+
+
+                button.dataset.id =
+                product.id;
+
+
+                button.dataset.name =
+                product.name;
+
+
+                button.dataset.price =
+                product.price;
+
+
+                button.dataset.image =
+                product.image;
+
+
+            }
+
+
+        }
 
 
     }
 
 
 }
+
+
+
+
+
+
 // ==============================
-// ÜRÜN ADET
+// ÜRÜN DETAY ADET
 // ==============================
 
 
@@ -343,96 +407,375 @@ let quantity = 1;
 
 
 
-function increaseQuantity(){
+const quantityText =
+document.getElementById("quantity");
 
 
-    quantity++;
+const plusBtn =
+document.getElementById("plus-btn");
 
 
-    document.getElementById("quantity").textContent = quantity;
+const minusBtn =
+document.getElementById("minus-btn");
 
-
-}
-
-
-
-
-function decreaseQuantity(){
-
-
-    if(quantity > 1){
-
-        quantity--;
-
-    }
-
-
-    document.getElementById("quantity").textContent = quantity;
-
-
-}
-// ==============================
-// CHECKOUT TOPLAM HESAPLAMA
-// ==============================
-
-const checkoutTotal = document.getElementById("total-price");
-const checkoutSubtotal = document.getElementById("subtotal-price");
-
-
-if(checkoutTotal){
-
-    let total = 0;
-
-
-    cart.forEach(product => {
-
-        total += product.price * product.quantity;
-
-    });
-
-
-    checkoutTotal.textContent = total + " ₺";
-
-
-    if(checkoutSubtotal){
-
-        checkoutSubtotal.textContent = total + " ₺";
-
-    }
-
-}
-// ==============================
-// ÜRÜN DETAY ADET KONTROLÜ
-// ==============================
-
-let quantity = 1;
-
-const quantityText = document.getElementById("quantity");
-const plusBtn = document.getElementById("plus-btn");
-const minusBtn = document.getElementById("minus-btn");
 
 
 if(plusBtn && minusBtn && quantityText){
 
-    plusBtn.addEventListener("click",()=>{
+
+
+    plusBtn.onclick=function(){
+
 
         quantity++;
 
-        quantityText.textContent = quantity;
 
-    });
+        quantityText.textContent =
+        quantity;
 
 
-    minusBtn.addEventListener("click",()=>{
+    };
+
+
+
+    minusBtn.onclick=function(){
+
 
         if(quantity > 1){
 
+
             quantity--;
+
 
         }
 
-        quantityText.textContent = quantity;
+
+
+        quantityText.textContent =
+        quantity;
+
+
+    };
+
+
+}
+
+
+
+
+
+
+
+// ==============================
+// SEPET SAYFASI
+// ==============================
+
+
+const cartItems =
+document.getElementById("cart-items");
+
+
+const totalPrice =
+document.getElementById("total-price");
+
+
+
+
+if(cartItems){
+
+
+
+    cartItems.innerHTML="";
+
+
+
+    let total = 0;
+
+
+
+
+    if(cart.length === 0){
+
+
+
+        cartItems.innerHTML = `
+
+        <div class="empty-cart">
+
+        <div class="empty-icon">🌸</div>
+
+        <h3>Sepetiniz Boş</h3>
+
+        <p>Çiçeklerinizi keşfetmeye başlayın.</p>
+
+        </div>
+
+        `;
+
+
+
+    } else {
+
+
+
+        cart.forEach((item,index)=>{
+
+
+
+            total +=
+            Number(item.price) *
+            Number(item.quantity);
+
+
+
+
+            cartItems.innerHTML += `
+
+
+            <div class="cart-item">
+
+
+            <img src="${item.image}">
+
+
+
+            <div class="cart-info">
+
+
+            <h3>${item.name}</h3>
+
+
+            <p>${item.price} ₺</p>
+
+
+
+
+            <div class="quantity">
+
+
+            <button onclick="changeQuantity(${index},-1)">
+            -
+            </button>
+
+
+
+            <span>
+            ${item.quantity}
+            </span>
+
+
+
+            <button onclick="changeQuantity(${index},1)">
+            +
+            </button>
+
+
+
+            </div>
+
+
+
+
+            <button class="remove-btn"
+            onclick="removeItem(${index})">
+
+            Kaldır
+
+            </button>
+
+
+
+            </div>
+
+
+            </div>
+
+
+            `;
+
+
+
+        });
+
+
+
+    }
+
+
+
+
+    if(totalPrice){
+
+
+        totalPrice.textContent =
+        total + " ₺";
+
+
+    }
+
+
+
+
+
+    const subtotal =
+    document.getElementById("subtotal-price");
+
+
+
+    if(subtotal){
+
+
+        subtotal.textContent =
+        total + " ₺";
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+// ==============================
+// ADET DEĞİŞTİRME
+// ==============================
+
+
+function changeQuantity(index,value){
+
+
+
+    if(!cart[index])
+    return;
+
+
+
+    cart[index].quantity =
+    Number(cart[index].quantity) + value;
+
+
+
+    if(cart[index].quantity <= 0){
+
+
+        cart.splice(index,1);
+
+
+    }
+
+
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+
+    updateCartCount();
+
+
+
+    location.reload();
+
+
+
+}
+
+
+
+
+
+
+// ==============================
+// ÜRÜN SİL
+// ==============================
+
+
+function removeItem(index){
+
+
+
+    cart.splice(index,1);
+
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+
+    updateCartCount();
+
+
+
+    location.reload();
+
+
+
+}
+
+
+
+
+
+
+// ==============================
+// ARAMA
+// ==============================
+
+
+const search =
+document.getElementById("search");
+
+
+
+if(search){
+
+
+
+    search.addEventListener("keyup",()=>{
+
+
+
+        const value =
+        search.value.toLowerCase();
+
+
+
+        document.querySelectorAll(".card")
+        .forEach(card=>{
+
+
+
+            card.style.display =
+
+            card.innerText
+            .toLowerCase()
+            .includes(value)
+
+            ?
+
+            "block"
+
+            :
+
+            "none";
+
+
+
+        });
+
+
 
     });
+
 
 }
