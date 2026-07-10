@@ -401,3 +401,38 @@ if(checkoutTotal){
     }
 
 }
+// ==============================
+// ÜRÜN DETAY ADET KONTROLÜ
+// ==============================
+
+let quantity = 1;
+
+const quantityText = document.getElementById("quantity");
+const plusBtn = document.getElementById("plus-btn");
+const minusBtn = document.getElementById("minus-btn");
+
+
+if(plusBtn && minusBtn && quantityText){
+
+    plusBtn.addEventListener("click",()=>{
+
+        quantity++;
+
+        quantityText.textContent = quantity;
+
+    });
+
+
+    minusBtn.addEventListener("click",()=>{
+
+        if(quantity > 1){
+
+            quantity--;
+
+        }
+
+        quantityText.textContent = quantity;
+
+    });
+
+}

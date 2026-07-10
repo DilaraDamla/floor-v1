@@ -31,16 +31,11 @@ FLOOR
 </div>
 
 
-
 <ul class="menu">
 
-
 <li>
-<a href="../index.html">
-Anasayfa
-</a>
+<a href="../index.html">Anasayfa</a>
 </li>
-
 
 
 <li class="dropdown">
@@ -64,13 +59,11 @@ Güller
 </a>
 </li>
 
-
 <li>
 <a href="lale.html">
 Laleler
 </a>
 </li>
-
 
 <li>
 <a href="orkide.html">
@@ -78,19 +71,15 @@ Orkideler
 </a>
 </li>
 
-
 <li>
 <a href="papatya.html">
 Papatyalar
 </a>
 </li>
 
-
 </ul>
 
-
 </li>
-
 
 
 <li>
@@ -100,7 +89,6 @@ Hakkımızda
 </li>
 
 
-
 <li>
 <a href="contact.html">
 İletişim
@@ -108,9 +96,7 @@ Hakkımızda
 </li>
 
 
-
 </ul>
-
 
 
 <div class="icons">
@@ -121,9 +107,7 @@ Hakkımızda
 
 </button>
 
-
 </div>
-
 
 
 </nav>
@@ -132,14 +116,13 @@ Hakkımızda
 
 
 
+
 <section class="product-detail">
 
 
 <div class="product-image">
 
-
 <img id="product-image" src="" alt="Çiçek">
-
 
 </div>
 
@@ -150,8 +133,8 @@ Hakkımızda
 
 
 <h1 id="product-title">
+Ürün
 </h1>
-
 
 
 <div class="stars">
@@ -166,36 +149,23 @@ Hakkımızda
 
 
 
-<div class="price" id="product-price">
+<p class="price" id="product-price"></p>
 
-</div>
 
 
 
 <div class="product-status">
 
+<span>✅ Stokta</span>
 
-<span>
-✅ Stokta
-</span>
+<span>🚚 Aynı Gün Teslimat</span>
 
+<span>🎁 Özel Paketleme</span>
 
-<span>
-🚚 Aynı Gün Teslimat
-</span>
-
-
-<span>
-🎁 Özel Paketleme
-</span>
-
-
-<span>
-🌿 Taze Çiçek Garantisi
-</span>
-
+<span>🌿 Taze Çiçek Garantisi</span>
 
 </div>
+
 
 
 
@@ -205,24 +175,29 @@ id="product-description">
 
 </p>
 
+
+
+
 <div class="quantity-box">
 
-<button onclick="changeProductQuantity(-1)">
+
+<button id="minus-btn">
 −
 </button>
 
 
-<span id="product-quantity">
+<span id="quantity">
 1
 </span>
 
 
-<button onclick="changeProductQuantity(1)">
+<button id="plus-btn">
 +
 </button>
 
 
 </div>
+
 
 
 
@@ -236,23 +211,19 @@ class="btn add-cart">
 
 
 
-<button class="btn buy-now">
+<button
+class="btn buy-now"
+onclick="buyNow()">
 
 ⚡ Hemen Satın Al
 
 </button>
 
 
-
 </div>
 
 
 </section>
-
-
-
-
-
 <section class="products">
 
 
@@ -262,51 +233,31 @@ Benzer Ürünler
 
 
 
-<p class="section-subtitle">
-
-Diğer özel çiçek koleksiyonlarımızı keşfedin.
-
-</p>
-
-
-
 <div class="product-list">
-
-
 
 
 
 <div class="card">
 
-
-<img src="../images/lale.png" alt="Lale Buketi">
-
-
-<div class="stars">
-★★★★★
-</div>
-
+<img src="../images/lale.png">
 
 <h3>
 Lale Buketi
 </h3>
 
+<div class="stars">
+★★★★★
+</div>
 
 <p class="price">
 850 ₺
 </p>
 
-
 <a href="product.html?id=2" class="detail-btn">
-
 İncele
-
 </a>
 
-
 </div>
-
-
 
 
 
@@ -314,35 +265,25 @@ Lale Buketi
 
 <div class="card">
 
-
-<img src="../images/orkide.png" alt="Beyaz Orkide">
-
-
-<div class="stars">
-★★★★★
-</div>
-
+<img src="../images/orkide.png">
 
 <h3>
 Beyaz Orkide
 </h3>
 
+<div class="stars">
+★★★★★
+</div>
 
 <p class="price">
 1200 ₺
 </p>
 
-
 <a href="product.html?id=3" class="detail-btn">
-
 İncele
-
 </a>
 
-
 </div>
-
-
 
 
 
@@ -350,56 +291,31 @@ Beyaz Orkide
 
 <div class="card">
 
-
-<img src="../images/papatya.png" alt="Papatya Buketi">
-
-
-<div class="stars">
-★★★★★
-</div>
-
+<img src="../images/papatya.png">
 
 <h3>
 Papatya Buketi
 </h3>
 
+<div class="stars">
+★★★★★
+</div>
 
 <p class="price">
 780 ₺
 </p>
 
-
 <a href="product.html?id=4" class="detail-btn">
-
 İncele
-
 </a>
 
-
 </div>
-
 
 
 </div>
 
 
 </section>
-
-
-
-
-
-<footer>
-
-
-<p>
-
-© 2026 FLOOR Çiçekçilik | Sevgiyle hazırlanan çiçekler 🌸
-
-</p>
-
-
-</footer>
 
 
 
@@ -411,30 +327,235 @@ Papatya Buketi
 
 
 
+
 <script>
+
+
+// ÜRÜN BİLGİLERİNİ GETİR
+
+const params = new URLSearchParams(window.location.search);
+
+const id = Number(params.get("id"));
+
+
+const product = products.find(item => item.id === id);
+
+
+
+if(product){
+
+
+document.getElementById("product-image").src = product.image;
+
+
+document.getElementById("product-title").textContent = product.name;
+
+
+document.getElementById("product-price").textContent =
+product.price + " ₺";
+
+
+document.getElementById("product-description").textContent =
+product.description;
+
+
+
+const button = document.getElementById("add-cart-btn");
+
+
+button.dataset.id = product.id;
+
+button.dataset.name = product.name;
+
+button.dataset.price = product.price;
+
+button.dataset.image = product.image;
+
+
+}
+
+
+
+
+
+// ADET KONTROLÜ
 
 
 let quantity = 1;
 
 
-function changeProductQuantity(value){
+const quantityText = document.getElementById("quantity");
+
+const plusBtn = document.getElementById("plus-btn");
+
+const minusBtn = document.getElementById("minus-btn");
 
 
-quantity += value;
+
+plusBtn.addEventListener("click",()=>{
 
 
-if(quantity < 1){
+quantity++;
 
-quantity = 1;
+quantityText.textContent = quantity;
+
+
+});
+
+
+
+
+
+minusBtn.addEventListener("click",()=>{
+
+
+if(quantity > 1){
+
+quantity--;
 
 }
 
 
-document.getElementById("product-quantity").textContent = quantity;
+quantityText.textContent = quantity;
 
+
+});
+
+
+
+
+
+
+// SEPETE EKLE
+
+
+const addButton = document.getElementById("add-cart-btn");
+
+
+
+addButton.addEventListener("click",()=>{
+
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+
+const productCart = {
+
+
+id:addButton.dataset.id,
+
+name:addButton.dataset.name,
+
+price:Number(addButton.dataset.price),
+
+image:addButton.dataset.image,
+
+quantity:quantity
+
+
+};
+
+
+
+
+const existing = cart.find(item => item.id == productCart.id);
+
+
+
+
+if(existing){
+
+existing.quantity += quantity;
 
 }
 
+else{
+
+cart.push(productCart);
+
+}
+
+
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+
+
+
+showNotification(
+"🌸 " + productCart.name + " sepete eklendi"
+);
+
+
+
+});
+
+
+
+
+
+
+// HEMEN SATIN AL
+
+
+function buyNow(){
+
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+
+const productCart = {
+
+
+id:product.id,
+
+name:product.name,
+
+price:product.price,
+
+image:product.image,
+
+quantity:quantity
+
+
+};
+
+
+
+const existing = cart.find(item => item.id == productCart.id);
+
+
+
+if(existing){
+
+existing.quantity += quantity;
+
+}
+
+else{
+
+cart.push(productCart);
+
+}
+
+
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+
+
+location.href="checkout.html";
+
+
+}
 
 
 </script>

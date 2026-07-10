@@ -229,13 +229,11 @@ Kart Bilgileri
 
 <button 
 class="btn checkout-btn"
-onclick="location.href='success.html'">
+onclick="completeOrder()">
 
 Siparişi Tamamla
 
 </button>
-
-
 
 </div>
 
@@ -342,7 +340,40 @@ Genel Toplam
 
 
 
+<script>
 
+function completeOrder(){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let total = 0;
+
+
+cart.forEach(item=>{
+
+    total += item.price * item.quantity;
+
+});
+
+
+localStorage.setItem(
+"lastOrderTotal",
+total
+);
+
+
+localStorage.setItem(
+"orderNumber",
+"#" + Math.floor(Math.random()*900000 + 100000)
+);
+
+
+location.href="success.html";
+
+
+}
+
+</script>
 
 <script src="../script.js"></script>
 
