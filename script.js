@@ -269,53 +269,96 @@ card.style.display=text.includes(value)
 });
 
 }
+// ==============================
+// ÜRÜN DETAY SAYFASI
+// ==============================
+
+
 const title = document.getElementById("product-title");
 
-if (title) {
+
+if(title){
+
 
     const params = new URLSearchParams(window.location.search);
 
+
     const id = Number(params.get("id"));
+
+
 
     const product = products.find(item => item.id === id);
 
-    if (product) {
+
+
+    if(product){
+
 
         document.getElementById("product-image").src = product.image;
 
-        document.getElementById("product-title").textContent = product.name;
+
+        document.getElementById("product-image").alt = product.name;
+
+
+
+        document.getElementById("product-title").textContent =
+        product.name;
+
+
 
         document.getElementById("product-price").textContent =
-            product.price + " ₺";
+        product.price + " ₺";
+
+
 
         document.getElementById("product-description").textContent =
-            product.description;
+        product.description;
+
+
 
         const btn = document.getElementById("add-cart-btn");
 
+
+
         btn.dataset.id = product.id;
+
         btn.dataset.name = product.name;
+
         btn.dataset.price = product.price;
+
         btn.dataset.image = product.image;
 
-        btn.classList.add("add-cart");
+
+
     }
 
+
 }
+// ==============================
+// ÜRÜN ADET
+// ==============================
+
+
 let quantity = 1;
+
 
 
 function increaseQuantity(){
 
+
     quantity++;
 
+
     document.getElementById("quantity").textContent = quantity;
+
 
 }
 
 
 
+
 function decreaseQuantity(){
+
 
     if(quantity > 1){
 
@@ -323,6 +366,8 @@ function decreaseQuantity(){
 
     }
 
+
     document.getElementById("quantity").textContent = quantity;
+
 
 }

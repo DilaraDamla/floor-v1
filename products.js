@@ -11,6 +11,7 @@ stock:true,
 description:"Kırmızı güllerden oluşan özel tasarım romantik buket."
 },
 
+
 {
 id:5,
 name:"Pembe Gül Buketi",
@@ -19,8 +20,9 @@ category:"gul",
 image:"../images/gul.png",
 rating:5,
 stock:true,
-description:"Zarif pembe güllerle hazırlanmış romantik buket."
+description:"Zarif pembe güllerle hazırlanmış özel buket."
 },
+
 
 {
 id:6,
@@ -30,8 +32,9 @@ category:"gul",
 image:"../images/gul.png",
 rating:5,
 stock:true,
-description:"Saflığı ve zarafeti yansıtan özel beyaz gül buketi."
+description:"Saflığı ve zarafeti temsil eden beyaz gül buketi."
 },
+
 
 
 {
@@ -45,6 +48,7 @@ stock:true,
 description:"Rengarenk lalelerden hazırlanan bahar buketi."
 },
 
+
 {
 id:7,
 name:"Renkli Laleler",
@@ -53,8 +57,9 @@ category:"lale",
 image:"../images/lale.png",
 rating:5,
 stock:true,
-description:"Canlı renkleriyle hazırlanmış özel lale koleksiyonu."
+description:"Canlı renklerden oluşan özel lale aranjmanı."
 },
+
 
 {
 id:8,
@@ -68,6 +73,7 @@ description:"Minimal ve zarif beyaz lale buketi."
 },
 
 
+
 {
 id:3,
 name:"Beyaz Orkide",
@@ -79,6 +85,7 @@ stock:true,
 description:"Şık ve zarif beyaz orkide."
 },
 
+
 {
 id:9,
 name:"Mor Orkide",
@@ -87,8 +94,9 @@ category:"orkide",
 image:"../images/orkide.png",
 rating:5,
 stock:true,
-description:"Özel tasarım mor orkide aranjmanı."
+description:"Özel tasarım mor orkide."
 },
+
 
 {
 id:10,
@@ -98,8 +106,9 @@ category:"orkide",
 image:"../images/orkide.png",
 rating:5,
 stock:true,
-description:"Küçük ve zarif mini orkide."
+description:"Küçük ve sevimli mini orkide."
 },
+
 
 
 {
@@ -113,6 +122,7 @@ stock:true,
 description:"Doğal kır papatyalarından hazırlanmıştır."
 },
 
+
 {
 id:11,
 name:"Renkli Papatyalar",
@@ -123,5 +133,6 @@ rating:5,
 stock:true,
 description:"Renkli papatyalarla hazırlanmış neşeli buket."
 }
+
 
 ];
