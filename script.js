@@ -93,6 +93,7 @@ document.addEventListener("click", function(e){
 
 
     if(!button) return;
+    console.log("ANASAYFA BUTONU ÇALIŞTI", button.dataset.name);
 
 
 
